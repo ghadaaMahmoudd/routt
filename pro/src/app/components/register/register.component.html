@@ -1,0 +1,51 @@
+<div class="register-container">
+  <div class="brand-logo">
+    <img src="assets/brandfy.jpg"><br>
+    <span class="orangeP">Join more than 200 brands around the world</span>
+    <p>Your first destination to publish your products and <br>quickly reach the largest number of users</p>
+  </div>
+  <div class="content-left">
+    <div class="up">
+      <h2>Register Now</h2>
+      <p class="gray">Personal Information</p>
+      <div class="form-step">
+        <span class="step active">1</span>
+        <span class="dash"></span>
+         <span class="step active">2</span>
+         <span class="dash"></span>
+        <span class="step">3</span>
+      </div>
+    </div>
+    <div class="down">
+      <form [formGroup]=" brandForm" (ngSubmit)="onSubmit()" class="reg-form">
+
+    <div class="full">
+      <label for="brandName">Brand Name <span class="astric">*</span></label>
+      <input  formControlName="brandName" placeholder="Enter your brand name" class="name" />
+    </div>
+
+    <div class="full">
+      <label for="category" class="category">Category  <span class="astric">*</span></label>
+      <select id="category" formControlName="category">
+        <option value="clothes">Clothes</option>
+        <option value="accessories">Accessories</option>
+        <option value="electronics">Electronics</option>
+        <option value="handmade">Hand Made</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="full">
+      <label for="country">Brand Location <span class="astric">*</span></label>
+<div class="country">
+      <input id="country" formControlName="country" placeholder="Country" />
+      <input id="city" formControlName="city" placeholder="City" /></div>
+    </div>
+
+    <div class="form-buttons">
+      <button type="button" class="btn-back" (click)="goBack()" routerLink="/reg-one">Back</button>
+      <button type="submit" [disabled]="!brandForm.valid" routerLink="/reg-three">Continue</button>
+    </div>
+  </form>
+</div>
+</div>
