@@ -1,0 +1,58 @@
+<div class="membership-container">
+  <h2>Update your package now</h2>
+
+  <div class="packages">
+
+    <div class="package economic">
+      <h3>Economic package</h3>
+      <p class="price">500.0 LE</p>
+      <p>Renew every 6 months</p>
+      <ul>
+        <li>✅ 5 Owners</li>
+        <li>✅ 35 Products</li>
+      </ul>
+      <button class="soon" disabled>Soon</button>
+    </div>
+
+
+    <div class="package basic">
+      <h3>Basic</h3>
+      <p class="price">25.0 LE</p>
+      <p>Billed Monthly</p>
+      <ul>
+        <li >✅ 1 Owner</li>
+        <li>✅ Limited products</li>
+        <li>✅ Post 5 products</li>
+      </ul>
+      <button class="current">Current Package</button>
+    </div>
+
+    <!-- Premium Plan -->
+    <div class="package premium">
+      <h3>Premium</h3>
+      <p class="price">150.0 LE</p>
+      <p>Billed Monthly</p>
+      <ul>
+        <li>✅ Unlimited Owners</li>
+        <li>✅ Unlimited Products</li>
+        <li>✅ Post Free Products</li>
+      </ul>
+      <button (click)="openPaymentDialog()" class="subscribenow">Subscribe Now</button>
+    </div>
+  </div>
+
+
+  <div class="payment-dialog" *ngIf="showPaymentDialog">
+    <div class="payment-content">
+     <img src="assets/brandfy.jpg" >
+      <label>Email <span class="astric">*</span></label>
+      <input type="email" placeholder="Enter your email" required />
+
+      <label>Credit Card Number  <span class="astric">*</span></label>
+      <input type="text" placeholder="Enter card number" required />
+
+      <button class="pay-btn">Pay | 150.0 LE</button>
+      <button class="close-btn" (click)="closePaymentDialog()">Close</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="brand-section">
+    <img src="assets/Rectangle 1.png" alt="Brandfy Logo" class="logo" />
+    <h3>Join more than 200 brands around the world</h3>
+    <p>
+      Your first destination to publish your products and <br />
+      quickly reach the largest number of users
+    </p>
+    <p class="account-text">
+      <strong>Don’t have an account?</strong>
+      <a href="#" class="signup-link">Sign in Here !</a>
+    </p>
+  </div>
+
+  <div class="login-section">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email or Brand Name <span>*</span></label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Enter your email or brand name"
+          required
+        />
+        <div
+          *ngIf="
+            loginForm.get('email')?.invalid && loginForm.get('email')?.touched
+          "
+          class="error"
+        >
+          Valid email is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password <span>*</span></label>
+        <input
+          type="password"
+          formControlName="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
+        <div
+          *ngIf="
+            loginForm.get('password')?.invalid &&
+            loginForm.get('password')?.touched
+          "
+          class="error"
+        >
+          Password is required (min length: 6).
+        </div>
+      </div>
+      <button type="submit" class="login-btn" [disabled]="loginForm.invalid">
+        Login
+      </button>
+      <button
+        type="button"
+        class="forgot-password-btn"
+        routerLink="/forgetpassworduser"
+      >
+        Forget Password
+      </button>
+    </form>
+  </div>
+</div>
+<!-- popup -->
+<div *ngIf="loginError" class="error-popup">
+  <span>Email and password combination <br />are not valid</span>
+  <button (click)="closeError()">×</button>
+</div>

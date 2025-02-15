@@ -1,0 +1,6 @@
+<div class="d-flex justify-content-center">
+  <div *ngFor="let brand of brands" class="brand-card">
+    <img [src]="brand.logo" alt="{{ brand.name }}" />
+    <p>{{ brand.name }}</p>
+  </div>
+</div>

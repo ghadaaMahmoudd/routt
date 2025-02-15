@@ -1,0 +1,94 @@
+<!-- <div class="container">
+  <div class="brand-logo">
+   <img src="/pro/src/assets/images/brandfy.jpg"><br>
+     <span class="orangeP">Join more than 200 brands around the world</span><br>
+      <span  class="brand">Your first destination to publish your products and quickly reach the largest number of users</span>
+
+    <p>Don’t have an account? <a href="#">Sign in Here!</a></p>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+
+
+    <div class="form-group">
+      <label for="email">Email or Brand Name</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Enter your email or brand name"
+        [ngClass]="{'is-invalid': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}"
+      />
+      <div class="error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        Please enter a valid email
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <div class="password-wrapper">
+        <input
+          [type]="hidePassword ? 'password' : 'text'"
+          id="password"
+          formControlName="password"
+          placeholder="Enter your password"
+        />
+        <span (click)="togglePasswordVisibility()">
+          {{ hidePassword ? '👁️' : '🙈' }}
+        </span>
+      </div>
+      <div class="error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        Password is required
+      </div>
+    </div>
+
+
+    <div class="form-buttons">
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+      <button type="button" class="forgot-password">Forget Password</button>
+    </div>
+  </form>
+</div>
+ -->
+ <div *ngIf="loginError" class="error-popup">
+  <span>Email and password combination are not valid</span>
+  <button (click)="closeError()">×</button>
+</div>
+<div class="login-container">
+    <div class="left-panel">
+      <div class="brand-logo">
+        <img src="assets/brandfy.jpg" alt="Brandfy" />
+        <span class="orangeP">Join more than 200 brands around the world</span>
+        <p>Your first destination to publish your products and <br>quickly reach the largest number of users</p>
+        <p class="acc"><a href="#" class="acc">Have an account?<span class="log"> <a href="#" class="log"> Sign in Here!</a> </span></a></p>
+      </div>
+    
+   
+        </div>
+
+     
+  </div>
+    <div class="right-panel">
+      <h2>Login </h2>
+    </div><form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email" class="gray">Email of Brand Name <span class="astric">*</span></label>
+        <input id="email" formControlName="email" type="email" placeholder="Email" class="form-control">
+        <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched" class="error">
+          Valid email is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="gray">Password <span class="astric">*</span></label>
+        <input id="password" formControlName="password" type="password" placeholder="Password" class="form-control">
+        <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched" class="error">
+          Password is required (min length: 6).
+        </div>
+        <button type="submit" [disabled]="registrationForm.invalid" class="login-btn">Login</button>
+        <button type="button" class="forgot-password" routerLink="/forgetpassworduser">Forget Password</button>
+      
+      </div>
+

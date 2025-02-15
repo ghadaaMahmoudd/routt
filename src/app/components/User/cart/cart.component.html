@@ -1,0 +1,33 @@
+<div class="cart-container">
+
+
+
+    <div class="cart-content">
+      <div class="cart-items">
+        <div class="cart-item" *ngFor="let item of cartItems">
+          <img [src]="item.image" class="item-image" />
+          <div class="item-details">
+            <p>{{ item.price }} L.E</p>
+            <div class="quantity">
+              <button (click)="updateQuantity(item, -1)">-</button>
+              <span>{{ item.quantity }}</span>
+              <button (click)="updateQuantity(item, 1)">+</button>
+            </div>
+            <p>Total: {{ item.price * item.quantity }} L.E</p>
+          </div>
+          <button class="delete-btn" (click)="removeItem(item)">🗑️</button>
+        </div>
+      </div>
+
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <p>Subtotal: {{ subtotal }} L.E</p>
+        <p>Shipping: {{ shipping }} L.E</p>
+        <a href="#" class="coupon">Add Coupon Code →</a>
+        <hr />
+        <p><strong>Total: {{ total }} L.E</strong></p>
+        <button class="checkout-btn">CHECKOUT</button>
+      </div>
+    </div>
+  </div>
+

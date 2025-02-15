@@ -1,0 +1,23 @@
+.text-orange {
+    color: #E68332;
+  }
+  .form-control {
+    border-radius: 8px;
+  }
+  .btn{
+    background-color: #E68332;
+    color: white;
+    text-align: center;
+   padding: 5px 35px;
+   border-radius: 20px;
+   margin-left: 110px;
+   margin-top: 10px;
+  }
+  .error{
+    color: #E68332;
+  }
+  
+  .show{
+    color: #E68332;
+  }
+  

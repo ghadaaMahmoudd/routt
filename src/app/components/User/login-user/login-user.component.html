@@ -1,0 +1,75 @@
+<div class="login-container">
+  <!-- Left Side - Login Form -->
+  <div class="login-box">
+    <div class="img">
+      <img src="assets/Rectangle 52.png" class="logo" alt="Brandfy Logo" />
+    </div>
+    <h2>Log in</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Email"
+        required
+      />
+      <div
+        *ngIf="
+          loginForm.get('email')?.invalid && loginForm.get('email')?.touched
+        "
+        class="error"
+      >
+        Valid email is required.
+      </div>
+      <div class="password-box">
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          formControlName="password"
+          placeholder="Password"
+          required
+        />
+        <i
+          class="fas"
+          [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'"
+          (click)="togglePassword()"
+        ></i>
+      </div>
+      <div
+        *ngIf="
+          loginForm.get('password')?.invalid &&
+          loginForm.get('password')?.touched
+        "
+        class="error"
+      >
+        (min length: 6)
+      </div>
+
+      <a href="#" class="forgot-password">Forgot Password?</a>
+
+      <button type="submit" class="login-btn">Log in</button>
+    </form>
+
+    <p>
+      Don’t have an account?
+      <a routerlink="/signup" routerLink="/signup" class="signup"
+        >Sign Up Now</a
+      >
+    </p>
+  </div>
+
+  <!-- OR Divider -->
+  <div class="divider">
+    <span>OR</span>
+  </div>
+  <!-- Right Side - Social Logins -->
+  <div class="social-login">
+    <button class="social-btn google">
+      <img src="assets/devicon_google.png" /> Continue with Google
+    </button>
+    <button class="social-btn facebook">
+      <img src="assets/logos_facebook.png" /> Continue with Facebook
+    </button>
+    <button class="social-btn email">
+      <img src="assets/ic_round-email.png" /> Continue with Email
+    </button>
+  </div>
+</div>
