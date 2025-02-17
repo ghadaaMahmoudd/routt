@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    padding-bottom: 0px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .navbar-right{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+  }
+  
+  .butn {
+    background-color: #E68332;
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+    height: 35px;
+    border: #E68332;
+    cursor: pointer;
+  }
+  .cart-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  

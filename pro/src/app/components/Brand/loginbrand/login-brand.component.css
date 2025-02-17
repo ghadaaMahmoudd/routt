@@ -1,0 +1,138 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Brand Section */
+  .brand-section {
+    flex: 1;
+    text-align: center;
+    margin-right: 20px;
+  }
+  
+  .brand-section .logo {
+    width: 340px;
+    height: 216px;
+    top: 243px;
+    left: 201px;
+  }
+  
+  .brand-section h3 {
+    font-size: 18px;
+    color: #E68332;
+    margin: 15px ;
+    margin-top: -70px;
+  }
+  
+  .brand-section p {
+    font-size: 14px;
+    color: #000000;
+  }
+  .account-text {
+    margin-top: 10px;
+  }
+  
+  .signup-link {
+    color: #E68332;
+    font-weight: bold;
+  }
+  
+  /* Login Section */
+  .login-section {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 10px; 
+    margin-right: 70px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding-left: 40px;
+    height: 450px;
+    
+  }
+  
+  .login-section h2 {
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  span {
+    color: red;
+  }
+  
+  input {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .login-btn,
+  .forgot-password-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    padding: 10px;
+    border: none;
+    margin: 5px 110px;
+    border-radius: 15px;
+    margin-top: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+  }
+  .login-btn {
+    background-color: #E68332;
+    color: #fff;
+    margin-top: 40px;
+  }
+  
+  .forgot-password-btn {
+    background-color: #fff;
+    border: 1px solid #E68332;
+    color: #E68332;
+  }
+
+  .error{
+    color: #E68332;
+  }
+  /* popup */
+  .error-popup {
+    position: absolute;
+    top: 10px;
+    right: 650px;
+    background: #ffffff;
+    color: gray;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .error-popup button {
+    background: none;
+    border: none;
+    color:black;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 20px;
+  }

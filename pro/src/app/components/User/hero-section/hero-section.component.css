@@ -1,0 +1,23 @@
+
+.left-side {
+    background: #fceddf;
+    padding: 130px 60px;
+    width: 45%;
+    height: 490px;
+    text-align: center;
+    margin-bottom: 20px;
+    
+  }
+  .highlight {
+    color: #E68332;
+  }
+  .right-side{
+   width: 390px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 0px 30px;
+    margin-left: 130px;
+    margin-bottom: 20px;
+  }
+  

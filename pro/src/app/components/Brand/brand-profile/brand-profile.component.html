@@ -1,0 +1,79 @@
+<div class="brandProfile-container">
+  <!-- sidebar -->
+  <div class="sidebar">
+    <img src="assets\Rectangle 29 (1).png" />
+    <ul>
+      <li><i class="fa fa-home"></i> Home</li>
+      <li><i class="fa fa-shopping-cart"></i> Sales</li>
+      <li><i class="fa fa-comment"></i> Chat</li>
+      <li class="active"><i class="fa fa-user"></i> Profile</li>
+      <li><a> My Products</a></li>
+      <li><a> Orders</a></li>
+      <li><a> Subscriptionss</a></li>
+      <li><a> Team Work</a></li>
+      <li><a> Promocode</a></li>
+      <li class="logout"><i class="fa fa-sign-out"></i> Logout</li>
+    </ul>
+  </div>
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <h3>Welcome Here 👋</h3>
+      <div class="user-profile">
+        <img src="assets/user-avatar.jpg" alt="Brand" />
+        <span>Brand Name</span>
+      </div>
+    </div>
+    <div class="container">
+      <!-- Profile Header -->
+      <div class="profile-header">
+        <h2>Basma Badr</h2>
+        <p>Brand Owner</p>
+      </div>
+
+      <!-- Statistics Section -->
+      <div class="stats">
+        <div class="stat-item">
+          <h3>150</h3>
+          <p>Followers</p>
+        </div>
+        <div class="stat-item">
+          <h3>5</h3>
+          <p>Products</p>
+        </div>
+        <div class="stat-item">
+          <h3>3.7</h3>
+          <p>Rating</p>
+        </div>
+      </div>
+
+      <!-- Form Section -->
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <h3>Personal Information</h3>
+
+        <label>Owner Name *</label>
+        <input type="text" formControlName="ownerName" />
+
+        <label>Email *</label>
+        <input type="email" formControlName="email" />
+
+        <label>Phone *</label>
+        <input type="text" formControlName="phone" placeholder="01201581393" />
+
+        <h3>Brand Information</h3>
+
+        <label>Brand Name *</label>
+        <input type="text" formControlName="brandName" placeholder="Basma" />
+
+        <label>Category *</label>
+        <input type="text" formControlName="category" placeholder="Clothes" />
+
+        <h3>Membership Information</h3>
+        <label>Membership Type</label>
+        <p>Basic</p>
+
+        <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+</div>

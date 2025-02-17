@@ -1,0 +1,167 @@
+
+.membership-container {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+img{
+  width: 100px;
+}
+
+.packages {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.package {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+
+.economic {
+  border-color: #ff9800;
+  background-color: #ff9800;
+}
+
+.basic {
+  border-color: #ff9800;
+  color:gray ;
+}
+.basic li {
+  border-color: #ff9800;
+  color:gray ;
+}
+.premium {
+  border-color: #ff9800;
+  background-color: #ff9800;
+}
+
+
+.package:hover {
+  transform: translateY(-5px);
+  border-color: #ff9800;
+}
+
+
+.package h3 {
+  margin: 10px 0;
+  font-size: 20px;
+  color: black;
+}
+
+
+.package .price {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+}
+
+.package ul {
+  list-style: none;
+  padding: 0;
+
+}
+
+.package li {
+  margin: 5px 0;
+  font-size: 16px;
+  color: white;
+}
+.package .basic li {
+  margin: 5px 0;
+  font-size: 16px;
+  color: gray;
+}
+button {
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #e68900;
+}
+
+
+button.soon {
+  background-color: white;
+  cursor: not-allowed;
+  color: black;
+}
+button.subscribenow {
+  background-color: white;
+
+  color: black;
+  cursor: pointer;
+}
+
+button.current {
+  background-color: gray;
+  cursor: default;
+}
+label{
+  text-align: start;
+}
+
+.payment-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.payment-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: start;
+  width: 300px;
+}
+
+
+.payment-content input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+button.pay-btn {
+  background-color: #ff9800;
+  width: 100%;
+}
+
+
+button.close-btn {
+  background-color: red;
+  width: 100%;
+  margin-top: 10px;
+}
+.astric{
+  color: orangered;
+}

@@ -1,0 +1,51 @@
+<div class="register-container">
+  <div class="left-section">
+    <img src="assets/brandfy.jpg" alt="Brandfy Logo" class="logo">
+    <h3>Join more than 200 brands around the world</h3>
+    <p>Your first destination to publish your products and quickly reach the largest number of users</p>
+    <p>Have an account? <a href="#">Log in Here !</a></p>
+  </div>
+
+  <div class="right-section">
+    <div class="register-box">
+      <h2>Register Now</h2>
+      <p class="subtitle">Personal information</p>
+
+      <div class="progress-bar">
+        <span class="step active">1</span>
+        <span class="step">2</span>
+        <span class="step">3</span>
+      </div>
+
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <label>Full Name *</label>
+        <input type="text" formControlName="fullName" placeholder="Enter your full name">
+        <small *ngIf="registrationForm.get('fullName')?.invalid && registrationForm.get('fullName')?.touched">Required (min 3 characters)</small>
+
+        <label>Email *</label>
+        <input type="email" formControlName="email" placeholder="Enter your email">
+        <small *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">Invalid Email</small>
+
+        <label>Phone Number *</label>
+        <input type="text" formControlName="phoneNumber" placeholder="Enter your phone number">
+        <small *ngIf="registrationForm.get('phoneNumber')?.invalid && registrationForm.get('phoneNumber')?.touched">Invalid Egyptian number</small>
+
+        <label>Password *</label>
+        <input type="password" formControlName="password" placeholder="Enter your password">
+        <small *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">Min 6 characters</small>
+
+        <div class="gender">
+          <label>
+            <input type="radio" formControlName="gender" value="male"> Male
+          </label>
+          <label>
+            <input type="radio" formControlName="gender" value="female"> Female
+          </label>
+        </div>
+
+        <button type="submit" class="btn-continue" [disabled]="registrationForm.invalid" routerLink="/register">continue</button>
+      </form>
+    </div>
+  </div>
+</div>
+
