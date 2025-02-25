@@ -1,0 +1,84 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="assets\Rectangle 29 (1).png" />
+    <ul>
+      <li routerLink="/brand-main"><i class="fa fa-home"></i> Home</li>
+      <li><i class="fa fa-shopping-cart"></i> Sales</li>
+      <li><i class="fa fa-comment"></i> Chat</li>
+      <li><i class="fa fa-user"></i> Profile</li>
+      <li><a> My Products</a></li>
+      <li><a> Orders</a></li>
+      <li><a> Subscriptionss</a></li>
+      <li><a> Team Work</a></li>
+      <li class="active" routerLink="/create-promocode"><a> Promocode</a></li>
+      <li class="logout"><i class="fa fa-sign-out"></i> Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <h3>Welcome Here 👋</h3>
+      <div class="user-profile">
+        <img src="assets/user-avatar.jpg" alt="Brand" />
+        <span>Brand Name</span>
+      </div>
+    </div>
+    <div class="promocode-history">
+      <h2>📜 Promocode History</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Promocode</th>
+            <th>Description</th>
+            <th>Used</th>
+            <th>Created</th>
+            <th>Expires</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let promo of promocodes"
+            [class.gray-bg]="promo.used === 0"
+          >
+            <td>{{ promo.code }}</td>
+            <td>{{ promo.description }}</td>
+            <td>{{ promo.used }}</td>
+            <td>{{ promo.created }}</td>
+            <td>{{ promo.expires }}</td>
+            <td>
+              <button routerLink="/edit-promocode">✏️</button>
+              <button (click)="confirmDelete(promo)">
+                <i class="fa fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- Backdrop overlay -->
+<div class="modal-backdrop" *ngIf="showDeleteModal || showSuccessMessage"></div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal" *ngIf="showDeleteModal">
+  <div class="modal-content">
+    <p><strong>Are you sure</strong></p>
+    <p>you want to delete the promo code?</p>
+    <div class="modal-actions">
+      <button class="yes-btn" (click)="deletePromo()">Yes</button>
+      <button class="no-btn" (click)="cancelDelete()">No</button>
+    </div>
+  </div>
+</div>
+<!-- Success Message Modal -->
+<div class="success-modal" *ngIf="showSuccessMessage">
+  <div class="modal-content">
+    <img src="assets/Group.png" alt="Success" class="success-icon" />
+    <p class="green">Deleted successfully</p>
+  </div>
+</div>

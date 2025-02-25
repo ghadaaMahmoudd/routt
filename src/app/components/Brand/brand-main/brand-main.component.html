@@ -6,12 +6,12 @@
       <li class="active"><i class="fa fa-home"></i> Home</li>
       <li><i class="fa fa-shopping-cart"></i> Sales</li>
       <li><i class="fa fa-comment"></i> Chat</li>
-      <li><i class="fa fa-user"></i> Profile</li>
+      <li routerLink="/brand-profile"><i class="fa fa-user"></i> Profile</li>
       <li><a> My Products</a></li>
       <li><a> Orders</a></li>
       <li><a> Subscriptionss</a></li>
       <li><a> Team Work</a></li>
-      <li><a> Promocode</a></li>
+      <li><a routerLink="/create-promocode"> Promocode</a></li>
       <li class="logout"><i class="fa fa-sign-out"></i> Logout</li>
     </ul>
   </div>
@@ -46,7 +46,7 @@
             for each subscriber.
           </p>
           <div class="invite-code">
-            <input type="text" value=""  id="inviteCode" />
+            <input type="text" value="" id="inviteCode" />
             <button (click)="copyCode()" class="copy">Copy</button>
           </div>
         </div>

@@ -40,6 +40,9 @@ import { BrandProfileComponent } from './components/Brand/brand-profile/brand-pr
 import { ForgetPasswordAdminComponent } from './components/Admin/forgetpasswordadmin/forget-password-admin.component';
 import { ChangePasswordAdminComponent } from './components/Admin/changepasswordadmin/change-password-admin.component';
 import { ReggOneComponent } from './components/Brand/regg-one/regg-one.component';
+import { CreatePromocodeComponent } from './components/Brand/promocode/create-promocode/create-promocode.component';
+import { PromocodeHistoryComponent } from './components/Brand/promocode/promocode-history/promocode-history.component';
+import { EditPromocodeComponent } from './components/Brand/promocode/edit-promocode/edit-promocode.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +76,10 @@ import { ReggOneComponent } from './components/Brand/regg-one/regg-one.component
     LoginUserComponent,
     SignupComponent,
     BrandProfileComponent,
-    ReggOneComponent
+    ReggOneComponent,
+    CreatePromocodeComponent,
+    PromocodeHistoryComponent,
+    EditPromocodeComponent,
 
   ],
   imports: [

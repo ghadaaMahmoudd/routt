@@ -26,6 +26,11 @@ import { BrandProfileComponent } from './components/Brand/brand-profile/brand-pr
 import { ProductsComponent } from './components/User/products/products.component';
 import { ReggOneComponent } from './components/Brand/regg-one/regg-one.component';
 // import { RegOnecopyComponent } from './components/reg-one copy/reg-one.component';
+import { CreatePromocodeComponent } from './components/Brand/promocode/create-promocode/create-promocode.component';
+import { PromocodeHistoryComponent } from './components/Brand/promocode/promocode-history/promocode-history.component';
+import { EditPromocodeComponent } from './components/Brand/promocode/edit-promocode/edit-promocode.component';
+
+
 const routes: Routes = [
   {path:"register", component:RegisterComponent},
 //  {path:'reg-one',component:RegOneComponent},
@@ -53,6 +58,10 @@ const routes: Routes = [
    {path: 'brand-main', component: BrandMainComponent},
    {path: 'brand-profile', component: BrandProfileComponent},
    {path: 'reggone', component: ReggOneComponent},
+   {path: 'create-promocode', component: CreatePromocodeComponent},
+   { path: 'promocode-history', component: PromocodeHistoryComponent },
+   { path: 'edit-promocode', component: EditPromocodeComponent },
+
 
 
 ];

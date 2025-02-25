@@ -1,0 +1,93 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="assets\Rectangle 29 (1).png" />
+    <ul>
+      <li routerLink="/brand-main"><i class="fa fa-home"></i> Home</li>
+      <li><i class="fa fa-shopping-cart"></i> Sales</li>
+      <li><i class="fa fa-comment"></i> Chat</li>
+      <li><i class="fa fa-user"></i> Profile</li>
+      <li><a> My Products</a></li>
+      <li><a> Orders</a></li>
+      <li><a> Subscriptionss</a></li>
+      <li><a> Team Work</a></li>
+      <li class="active"><a> Promocode</a></li>
+      <li class="logout"><i class="fa fa-sign-out"></i> Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <h3>Welcome Here 👋</h3>
+      <div class="user-profile">
+        <img src="assets/user-avatar.jpg" alt="Brand" />
+        <span>Brand Name</span>
+      </div>
+    </div>
+    <div class="promo-container">
+      <div class="title">
+        <h2>
+          <img src="assets\mdi_coupon.png" alt="Promocode Icon" />
+          Promocode
+        </h2>
+        <a routerLink="/promocode-history" class="view-history-link"
+          >View Promocode History</a
+        >
+      </div>
+      <h3>Edit Promocode</h3>
+      <form [formGroup]="promoForm">
+        <div class="form-row">
+          <div class="input-group">
+            <label>Promocode</label>
+            <input
+              type="text"
+              formControlName="promocode"
+              placeholder="Ex: EXPW185"
+            />
+          </div>
+
+          <div class="input-group">
+            <label>Expiration Date</label>
+            <input type="date" formControlName="expirationDate" />
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" formControlName="neverExpires" />
+            <label>Never expires</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="discount-wrapper">
+            <label>Discount Amount</label>
+            <input type="text" formControlName="discountAmount" />
+            <span>%</span>
+          </div>
+
+          <div class="input-group">
+            <label>Condition</label>
+            <select formControlName="condition">
+              <option>For all orders</option>
+              <option>For one order</option>
+              <option>For specific product</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label>Maximum Users</label>
+            <input type="number" formControlName="maxUsers" />
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" formControlName="unlimitedUsers" />
+            <label>Unlimited</label>
+          </div>
+        </div>
+
+        <button type="submit">Create Promocode</button>
+      </form>
+    </div>
+  </div>
+</div>
