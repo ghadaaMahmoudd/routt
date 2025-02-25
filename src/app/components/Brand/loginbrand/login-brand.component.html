@@ -1,3 +1,7 @@
+<div *ngIf="loginError" class="error-popup">
+  <span>Email and password combination <br />are not valid</span>
+  <button (click)="closeError()">×</button>
+</div>
 <div class="container">
   <div class="brand-section">
     <img src="assets/Rectangle 1.png" alt="Brandfy Logo" class="logo" />

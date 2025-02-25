@@ -1,17 +1,14 @@
-
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ReggOneComponent } from './components/Brand/regg-one/regg-one.component';
 import { RegisterComponent } from './components/Brand/register/register.component';
-// import { RegOneComponent } from './components/Brand/reg-one/reg-one.component';
 import { RegThreeComponent } from './components/Brand/reg-three/reg-three.component';
-import { LoginAdminComponent } from './components/login-admin/login-admin.component';
-import { ForgetPasswordComponent } from './components/Brand/forget-password/forget-password.component';
-import { LoginComponent } from './components/login/login.component';
-import { ForgetPasswordUserComponent } from './components/Brand/forget-password-user/forget-password-user.component';
-import { ChangePasswordUserComponent } from './components/Brand/change-password-user/change-password-user.component';
+import { LoginAdminComponent } from './components/Admin/loginadmin/login-admin.component';
+import { ForgetPasswordBrandComponent } from './components/Brand/forget-password-brand/forget-password-brand.component';
+import { ChangePasswordBrandComponent } from './components/Brand/change-password-brand/change-password-brand.component';
 import{HttpClientModule}from'@angular/common/http';
 import { CartComponent } from './components/User/cart/cart.component';
 import { ProductDetailsComponent } from './components/User/product-details/product-details.component';
@@ -36,7 +33,6 @@ import { SignupComponent } from './components/User/signup/signup.component';
 import { BrandProfileComponent } from './components/Brand/brand-profile/brand-profile.component';
 import { ForgetPasswordAdminComponent } from './components/Admin/forgetpasswordadmin/forget-password-admin.component';
 import { ChangePasswordAdminComponent } from './components/Admin/changepasswordadmin/change-password-admin.component';
-import { ReggOneComponent } from './components/Brand/regg-one/regg-one.component';
 import { CreatePromocodeComponent } from './components/Brand/promocode/create-promocode/create-promocode.component';
 import { PromocodeHistoryComponent } from './components/Brand/promocode/promocode-history/promocode-history.component';
 import { EditPromocodeComponent } from './components/Brand/promocode/edit-promocode/edit-promocode.component';
@@ -44,18 +40,15 @@ import { EditPromocodeComponent } from './components/Brand/promocode/edit-promoc
 @NgModule({
   declarations: [
     AppComponent,
+    ReggOneComponent,
     RegisterComponent,
-    // RegOneComponent,
-   RegThreeComponent,
+    RegThreeComponent,
     LoginAdminComponent,
-    ForgetPasswordComponent,
-    LoginComponent,
-    ForgetPasswordUserComponent,
-    ChangePasswordUserComponent,
+    ForgetPasswordBrandComponent,
+    ChangePasswordBrandComponent,
     CartComponent,
     ProductDetailsComponent,
     MembershipComponent,
-    // LoginComponentAdmin,
     ForgetPasswordAdminComponent,
     ChangePasswordAdminComponent,
     LoginBrandComponent,
@@ -73,7 +66,6 @@ import { EditPromocodeComponent } from './components/Brand/promocode/edit-promoc
     LoginUserComponent,
     SignupComponent,
     BrandProfileComponent,
-    ReggOneComponent,
     CreatePromocodeComponent,
     PromocodeHistoryComponent,
     EditPromocodeComponent,

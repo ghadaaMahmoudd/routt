@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'loginadmin',
@@ -9,21 +8,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class LoginAdminComponent {
   registrationForm: FormGroup;
-  loginError: boolean = false;
+  loginError: boolean = false; 
 
-   constructor(private fb: FormBuilder) {
-   this.registrationForm = this.fb.group({
-     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]]
+  constructor(private fb: FormBuilder) {
+    this.registrationForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
-        // registerForm:FormGroup=new FormGroup({
-
-        // email: new FormControl('', [Validators.required, Validators.email]),
-
-        //    password:new FormControl ('', [Validators.required, Validators.minLength(6)]),
-
-        // });
 
   onSubmit() {
     if (this.registrationForm.valid) {
@@ -31,19 +23,19 @@ export class LoginAdminComponent {
       const password = this.registrationForm.get('password')?.value;
 
       if (email === 'test@example.com' && password === 'password123') {
-        this.loginError = false;
+        this.loginError = false; 
         console.log('Login successful!');
       } else {
-        this.loginError = true;
+        this.loginError = true; 
         console.log('Login failed. Invalid credentials.');
       }
     } else {
-      this.loginError = true;
+      this.loginError = true; 
       console.log('Form is invalid.');
     }
   }
 
   closeError() {
-    this.loginError = false;
+    this.loginError = false; 
   }
 }

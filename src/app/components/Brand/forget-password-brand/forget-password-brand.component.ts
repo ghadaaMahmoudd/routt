@@ -2,19 +2,16 @@ import { Component } from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 
 @Component({
-  selector: 'forget-password-user',
-  templateUrl: './forget-password-user.component.html',
-  styleUrls: ['./forget-password-user.component.css']
+  selector: 'forget-password-brand',
+  templateUrl: './forget-password-brand.component.html',
+  styleUrls: ['./forget-password-brand.component.css']
 })
-export class ForgetPasswordUserComponent {
+export class ForgetPasswordBrandComponent {
   registrationForm: FormGroup;
   constructor(private fb: FormBuilder) {
     this.registrationForm = this.fb.group({
 
       email: ['', [Validators.required, Validators.email]],
-
-     
-
     });
   }
   onSubmit() {
