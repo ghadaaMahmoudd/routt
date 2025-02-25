@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-promocode',
   templateUrl: './create-promocode.component.html',
-  styleUrls: ['./create-promocode.component.css']
+  styleUrls: ['./create-promocode.component.css'],
 })
 export class CreatePromocodeComponent {
   promoForm: FormGroup;

@@ -16,10 +16,7 @@ import{HttpClientModule}from'@angular/common/http';
 import { CartComponent } from './components/User/cart/cart.component';
 import { ProductDetailsComponent } from './components/User/product-details/product-details.component';
 import { MembershipComponent } from './components/Brand/membership/membership.component';
-
 import { MatDialogModule } from '@angular/material/dialog';
-// import { BrandProfileComponent } from './components/Brand/brand-profile/brand-profile.component';
-// import { SignupComponent } from './components/User/signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginBrandComponent } from './components/Brand/loginbrand/login-brand.component';
 import {  WaitingDashBoardComponent } from './components/Brand/waiting-dashboard/waiting-dashboardcomponent';

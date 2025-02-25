@@ -32,16 +32,16 @@ import { EditPromocodeComponent } from './components/Brand/promocode/edit-promoc
 
 
 const routes: Routes = [
-  {path:"register", component:RegisterComponent},
+   {path:"register", component:RegisterComponent},
 //  {path:'reg-one',component:RegOneComponent},
   // {path:'reg-one-copy',component:RegOneComponent},
-  {path:'reg-three',component:RegThreeComponent},
+   {path:'reg-three',component:RegThreeComponent},
    {path:"login-admin", component:LoginAdminComponent},
-  {path:"forget-password", component:ForgetPasswordComponent},
-  {path:'login',component:LoginComponent},
-  {path:'forgetpassworduser',component:ForgetPasswordUserComponent},
- {path:'changePassword',component:ChangePasswordUserComponent},
- {path:'cart',component:CartComponent},
+   {path:"forget-password", component:ForgetPasswordComponent},
+   {path:'login',component:LoginComponent},
+   {path:'forgetpassworduser',component:ForgetPasswordUserComponent},
+   {path:'changePassword',component:ChangePasswordUserComponent},
+   {path:'cart',component:CartComponent},
    {path:'product-details',component:ProductDetailsComponent},
    {path:'membership',component:MembershipComponent},
   //  {path:'loginadmin',component:LoginAdminComponent},
@@ -54,16 +54,12 @@ const routes: Routes = [
    {path: 'user', component: CategoriesComponent },
    {path: 'userlogin', component: LoginUserComponent},
    {path: 'signup', component: SignupComponent },
-
    {path: 'brand-main', component: BrandMainComponent},
    {path: 'brand-profile', component: BrandProfileComponent},
    {path: 'reggone', component: ReggOneComponent},
    {path: 'create-promocode', component: CreatePromocodeComponent},
    { path: 'promocode-history', component: PromocodeHistoryComponent },
    { path: 'edit-promocode', component: EditPromocodeComponent },
-
-
-
 ];
 
 @NgModule({
