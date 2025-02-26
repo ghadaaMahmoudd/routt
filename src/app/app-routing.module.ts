@@ -24,6 +24,10 @@ import { ProductsComponent } from './components/User/products/products.component
 import { CreatePromocodeComponent } from './components/Brand/promocode/create-promocode/create-promocode.component';
 import { PromocodeHistoryComponent } from './components/Brand/promocode/promocode-history/promocode-history.component';
 import { EditPromocodeComponent } from './components/Brand/promocode/edit-promocode/edit-promocode.component';
+import { TeamworkBasicComponent } from './components/Brand/teamwork/teamwork-basic/teamwork-basic.component';
+import { TeamworkBrandComponent } from './components/Brand/teamwork/teamwork-brand/teamwork-brand.component';
+import { TeamworkAddComponent } from './components/Brand/teamwork/teamwork-add/teamwork-add.component';
+
 
 
 const routes: Routes = [
@@ -50,6 +54,10 @@ const routes: Routes = [
    {path: 'create-promocode', component: CreatePromocodeComponent},
    { path: 'promocode-history', component: PromocodeHistoryComponent },
    { path: 'edit-promocode', component: EditPromocodeComponent },
+   { path: 'teamwork-basic', component: TeamworkBasicComponent },
+   { path: 'teamwork-brand', component: TeamworkBrandComponent },
+   { path: 'teamwork-add', component: TeamworkAddComponent },
+  
 ];
 
 @NgModule({

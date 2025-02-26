@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
@@ -36,6 +37,9 @@ import { ChangePasswordAdminComponent } from './components/Admin/changepassworda
 import { CreatePromocodeComponent } from './components/Brand/promocode/create-promocode/create-promocode.component';
 import { PromocodeHistoryComponent } from './components/Brand/promocode/promocode-history/promocode-history.component';
 import { EditPromocodeComponent } from './components/Brand/promocode/edit-promocode/edit-promocode.component';
+import { TeamworkBasicComponent } from './components/Brand/teamwork/teamwork-basic/teamwork-basic.component';
+import { TeamworkBrandComponent } from './components/Brand/teamwork/teamwork-brand/teamwork-brand.component';
+import { TeamworkAddComponent } from './components/Brand/teamwork/teamwork-add/teamwork-add.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +73,9 @@ import { EditPromocodeComponent } from './components/Brand/promocode/edit-promoc
     CreatePromocodeComponent,
     PromocodeHistoryComponent,
     EditPromocodeComponent,
+    TeamworkBasicComponent,
+    TeamworkBrandComponent,
+    TeamworkAddComponent,
 
   ],
   imports: [
@@ -77,6 +84,7 @@ import { EditPromocodeComponent } from './components/Brand/promocode/edit-promoc
     ReactiveFormsModule,
     HttpClientModule,
     MatDialogModule,
+    FormsModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     })
