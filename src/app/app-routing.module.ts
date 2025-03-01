@@ -27,6 +27,9 @@ import { EditPromocodeComponent } from './components/Brand/promocode/edit-promoc
 import { TeamworkBasicComponent } from './components/Brand/teamwork/teamwork-basic/teamwork-basic.component';
 import { TeamworkBrandComponent } from './components/Brand/teamwork/teamwork-brand/teamwork-brand.component';
 import { TeamworkAddComponent } from './components/Brand/teamwork/teamwork-add/teamwork-add.component';
+import { ChatsComponent } from './components/Brand/chats/chats.component';
+import { SalesReportComponent } from './components/Brand/sales-report/sales-report.component';
+import { SalesForBrandComponent } from './components/Brand/sales-for-brand/sales-for-brand.component';
 
 
 
@@ -57,6 +60,9 @@ const routes: Routes = [
    { path: 'teamwork-basic', component: TeamworkBasicComponent },
    { path: 'teamwork-brand', component: TeamworkBrandComponent },
    { path: 'teamwork-add', component: TeamworkAddComponent },
+   { path: 'chats', component: ChatsComponent },
+   { path: 'sales-report', component: SalesReportComponent },
+   { path: 'sales-for-brand', component: SalesForBrandComponent },
   
 ];
 

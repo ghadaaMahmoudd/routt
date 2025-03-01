@@ -1,0 +1,96 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="assets\Rectangle 29 (1).png" />
+    <ul>
+      <li routerLink="/brand-main"><i class="fa fa-home"></i> Home</li>
+      <li class="active"><i class="fa fa-shopping-cart"></i> Sales</li>
+      <li><i class="fa fa-comment"></i> Chat</li>
+      <li><i class="fa fa-user" routerLink="brand-profile"></i> Profile</li>
+      <li><a> My Products</a></li>
+      <li><a> Orders</a></li>
+      <li><a> Subscriptionss</a></li>
+      <li><a> Team Work</a></li>
+      <li routerLink="/create-promocode"><a> Promocode</a></li>
+      <li class="logout"><i class="fa fa-sign-out"></i> Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <h3>Welcome Here 👋</h3>
+      <div class="user-profile">
+        <img src="assets/user-avatar.jpg" alt="Brand" />
+        <span>Brand Name</span>
+      </div>
+    </div>
+    <div class="sales-container">
+      <h2>Sales</h2>
+
+      <div class="stats">
+        <div class="card">
+          <div class="icon">📊</div>
+          <div>
+            <p>Total Number of Products Sold</p>
+            <h3>{{ totalProductsSold }}</h3>
+          </div>
+        </div>
+
+        <input
+          type="text"
+          placeholder="Search by customer name"
+          [(ngModel)]="searchQuery"
+        />
+
+        <input type="month" [(ngModel)]="selectedMonth" />
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Month</th>
+            <th>Products Purchased</th>
+            <th>Total Sales</th>
+            <th>Total Profit</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let sale of filteredData()">
+            <td>{{ sale.name }}</td>
+            <td>{{ sale.month }}</td>
+            <td>{{ sale.purchased }}</td>
+            <td>{{ sale.sales }}</td>
+            <td>{{ sale.profit }}</td>
+            <td>
+              <button routerLink="/sales-report" class="report-btn">
+                📈 Report
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pagination">
+        <button>&lt;</button>
+        <button class="active">1</button>
+        <button>2</button>
+        <button>...</button>
+        <button>9</button>
+        <button>10</button>
+        <button>&gt;</button>
+      </div>
+      <!-- <div class="card flex justify-content-center">
+    <p-paginator
+        (onPageChange)="onPageChange($event)"
+        [first]="first"
+        [rows]="rows"
+        [totalRecords]="120"
+        [rowsPerPageOptions]="[10, 20, 30]" />
+  </div> -->
+    </div>
+  </div>
+</div>

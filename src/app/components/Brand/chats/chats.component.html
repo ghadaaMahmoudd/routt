@@ -1,0 +1,46 @@
+<div class="chat-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="profile">
+      <img src="assets/user.jpg" alt="User" class="avatar" />
+      <span>Basma Badr</span>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search" />
+    </div>
+    <ul class="chat-list">
+      <li *ngFor="let user of ['Fatma Ahmed', 'Mariam Hossam', 'Hossam Eslam']">
+        <img src="assets/user.jpg" alt="User" class="avatar" />
+        <div class="chat-info">
+          <span class="chat-name">{{ user }}</span>
+          <span class="chat-message">Last message...</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Chat Window -->
+  <div class="chat-window">
+    <div class="chat-header">
+      <img src="assets/user.jpg" alt="User" class="avatar" />
+      <span class="chat-name">Mariam Hossam</span>
+    </div>
+
+    <div class="messages">
+      <div
+        *ngFor="let message of messages"
+        class="message"
+        [ngClass]="{ 'sent': message.isCurrentUser, 'received': !message.isCurrentUser }"
+      >
+        <span>{{ message.text }}</span>
+        <small>{{ message.time }}</small>
+      </div>
+    </div>
+
+    <!-- Message Input -->
+    <div class="message-input">
+      <input type="text" [(ngModel)]="newMessage" placeholder="Type a message..." />
+      <button (click)="sendMessage()">➤</button>
+    </div>
+  </div>
+</div>
