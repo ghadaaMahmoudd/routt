@@ -27,7 +27,13 @@ export class RegThreeComponent {
     alert(`You have started a free trial for the ${planType} plan.`);
   }
 
+  isSubmitted = false; 
 
+  submitRequest(): void {
+    this.isSubmitted = true; 
+  }
 
-
+  closePopup(): void {
+    this.isSubmitted = false; 
+  }
 }

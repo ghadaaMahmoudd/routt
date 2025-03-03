@@ -1,4 +1,7 @@
-/* إعدادات عامة */
+.blurred {
+  filter: blur(5px);
+  pointer-events: none; 
+}
 body, html {
   margin: 0;
   padding: 0;
@@ -18,7 +21,6 @@ body, html {
   flex: 1;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
    align-items: center;
    margin-left: 60px;
    text-align: start;
@@ -31,12 +33,12 @@ body, html {
 }
 .free-trial
 {
-  padding-top: -200px;
+  margin-top: -50px;
 }
 .free-trial h1 {
   font-size: 3.5rem;
-  font-weight: bold;
   margin-bottom: 10px;
+  
 
 }
 
@@ -46,11 +48,9 @@ body, html {
 
 .free-trial p {
   color: #777;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 30px;
 }
-
-/* تقسيم الصفحة إلى عمودين */
 .pricing-section {
   display: flex;
   justify-content: center;
@@ -120,12 +120,11 @@ body, html {
   padding: 10px;
   margin-top: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   background-color: #E68332;
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
 }
 
 .btn:hover {
@@ -133,10 +132,10 @@ body, html {
 }
 
 .action-buttons {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
 }
 
 .action-buttons .btn {
@@ -144,20 +143,21 @@ body, html {
 }
 
 .action-buttons .back-btn {
-  background-color: #ddd;
-  color: #333;
+  background-color: white;
+  color: #E68332;
+  border: 1px double #E68332;
 }
 .content-left{
-  /* background-color: rgb(241, 219, 219) !important; */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   height: 80%;
+  width: 450px;
   align-self: center;
-padding: 50px;
-margin: 50px;
+  padding: 30px;
+  margin: 50px;
+  margin-top: 10px;
   align-items: center;
 }
 .content-left .up {
-  /* background-color: red !important; */
   text-align: center;
   padding: 1rem;
 
@@ -177,16 +177,10 @@ margin: 50px;
   height: 40px;
 }
 .dash{
-
-  /* padding-top: 20px; */
   background-color: green;
   display: flex;
-  /*align-items: center; */
-
   width: 2rem;
   position: relative;
-  /* height: 100%; */
-
   background-color: green;
 }
 .dash::before{
@@ -219,7 +213,47 @@ margin: 50px;
   display: flex;
   width: 100%;
 }
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  text-align: center;
+  z-index: 1000;
+  width: 300px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
 
+.popup-content {
+  position: relative;
+}
+
+.popup-icon {
+  font-size: 40px;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+.close-btn:hover {
+  color: black;
+}
+.popup-content .login{
+  background-color: green;
+  width: 50%;
+}
 
 
 

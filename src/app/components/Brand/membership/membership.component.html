@@ -1,58 +1,146 @@
-<div class="membership-container">
-  <h2>Update your package now</h2>
-
-  <div class="packages">
-
-    <div class="package economic">
-      <h3>Economic package</h3>
-      <p class="price">500.0 LE</p>
-      <p>Renew every 6 months</p>
+<div [class.blurred]="showPaymentDialog">
+  <div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="assets\Rectangle 29 (1).png" />
       <ul>
-        <li>✅ 5 Owners</li>
-        <li>✅ 35 Products</li>
+        <li routerLink="/brand-main"><i class="fa fa-home"></i> Home</li>
+        <li><i class="fa fa-shopping-cart"></i> Sales</li>
+        <li><i class="fa fa-comment"></i> Chat</li>
+        <li><i class="fa fa-user"></i> Profile</li>
+        <li><a> My Products</a></li>
+        <li><a> Orders</a></li>
+        <li class="active"><a> Subscriptionss</a></li>
+        <li><a> Team Work</a></li>
+        <li><a> Promocode</a></li>
+        <li class="logout"><i class="fa fa-sign-out"></i> Logout</li>
       </ul>
-      <button class="soon" disabled>Soon</button>
     </div>
 
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Header -->
+      <div class="header">
+        <h3>Welcome Here 👋</h3>
+        <div class="user-profile">
+          <img src="assets/user-avatar.jpg" alt="Brand" />
+          <span>Brand Name</span>
+        </div>
+      </div>
+      <div class="membership-container">
+        <h2>Update your package now</h2>
 
-    <div class="package basic">
-      <h3>Basic</h3>
-      <p class="price">25.0 LE</p>
-      <p>Billed Monthly</p>
-      <ul>
-        <li >✅ 1 Owner</li>
-        <li>✅ Limited products</li>
-        <li>✅ Post 5 products</li>
-      </ul>
-      <button class="current">Current Package</button>
-    </div>
+        <div class="packages">
+          <div class="package economic">
+            <h3>Economic package</h3>
+            <p class="price">500.0 LE</p>
+            <p>Renew every 6 months</p>
+            <ul>
+              <li>✅ 5 Owners</li>
+              <li>✅ 35 Products</li>
+            </ul>
+            <button class="soon" disabled>Soon</button>
+          </div>
 
-    <!-- Premium Plan -->
-    <div class="package premium">
-      <h3>Premium</h3>
-      <p class="price">150.0 LE</p>
-      <p>Billed Monthly</p>
-      <ul>
-        <li>✅ Unlimited Owners</li>
-        <li>✅ Unlimited Products</li>
-        <li>✅ Post Free Products</li>
-      </ul>
-      <button (click)="openPaymentDialog()" class="subscribenow">Subscribe Now</button>
+          <div class="package basic">
+            <h3>Basic</h3>
+            <p class="price">25.0 LE</p>
+            <p>Billed Monthly</p>
+            <ul>
+              <li>✅ 1 Owner</li>
+              <li>✅ Limited products</li>
+              <li>✅ Post 5 products</li>
+            </ul>
+            <button class="renew">Renew now</button>
+            <button class="current">Current Package</button>
+          </div>
+
+          <!-- Premium Plan -->
+          <div class="package premium">
+            <h3>Premium</h3>
+            <p class="price">150.0 LE</p>
+            <p>Billed Monthly</p>
+            <button class="free-trial">Start a free trial</button>
+            <ul>
+              <li>✅ Unlimited Owners</li>
+              <li>✅ Unlimited Products</li>
+              <li>✅ Post Free Products</li>
+            </ul>
+            <button (click)="openPaymentDialog()" class="subscribenow">
+              Subscribe Now
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-
-  <div class="payment-dialog" *ngIf="showPaymentDialog">
-    <div class="payment-content">
-     <img src="assets/brandfy.jpg" >
-      <label>Email <span class="astric">*</span></label>
-      <input type="email" placeholder="Enter your email" required />
-
-      <label>Credit Card Number  <span class="astric">*</span></label>
-      <input type="text" placeholder="Enter card number" required />
-
-      <button class="pay-btn">Pay | 150.0 LE</button>
-      <button class="close-btn" (click)="closePaymentDialog()">Close</button>
+</div>
+<div class="payment-dialog" *ngIf="showPaymentDialog">
+  <div class="payment-content">
+    <div class="up">
+      <img src="assets/brandfy.jpg" />
+      <button class="close-btn" (click)="closePaymentDialog()">×</button>
     </div>
+    <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+      <label>Email <span class="astric">*</span></label>
+      <input
+        type="email"
+        placeholder="Enter your email"
+        formControlName="email"
+        required
+      />
+
+      <div *ngIf="email?.invalid && email?.touched">
+        <small *ngIf="email?.errors?.['required']" class="error"
+          >Email is required.</small
+        >
+        <small *ngIf="email?.errors?.['email']" class="error"
+          >Invalid email format.</small
+        >
+      </div>
+    </form>
+    <label>Credit Card Number *</label>
+    <input
+      type="text"
+      required
+      [(ngModel)]="cardNumber"
+      maxlength="16"
+      (input)="validateCardNumber()"
+      placeholder="Enter your card number"
+    />
+    <p *ngIf="showCardError" class="error">Card number must be 16 digits.</p>
+
+    <button class="pay-btn" (click)="startVerification()">
+      Pay | 150.0 LE
+    </button>
+  </div>
+</div>
+<!-- Verification Message -->
+<div *ngIf="isVerifying" class="modal">
+  <div class="modal-content">
+    <div class="loader"></div>
+    <p>The card is being verified and the process is being completed.</p>
+  </div>
+</div>
+
+<!-- Success Message -->
+<div *ngIf="isSuccess" class="modal">
+  <div class="modal-content">
+    <img src="assets/Group (1).png" alt="Success" />
+    <p class="success-text">You have successfully subscribed.</p>
+    <p>
+      You can now enjoy all the package features for a month and renew later.
+    </p>
+    <button (click)="reset()">Back</button>
+  </div>
+</div>
+
+<!-- Failure Message -->
+<div *ngIf="isFailure" class="modal">
+  <div class="modal-content">
+    <img src="assets/nrk_media-media-incomplete.png" alt="Failed" />
+    <p class="error-text">Payment failed</p>
+    <p>Please check the card and write the data correctly.</p>
+    <button (click)="reset()">Try Again</button>
   </div>
 </div>
