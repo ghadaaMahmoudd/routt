@@ -1,0 +1,139 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="assets\Rectangle 29 (1).png" />
+    <ul>
+      <li><i class="fa fa-home"></i> Home</li>
+      <li routerLink="/sales-for-brand">
+        <i class="fa fa-shopping-cart"></i> Sales
+      </li>
+      <li><i class="fa fa-comment"></i> Chat</li>
+      <li routerLink="/brand-profile"><i class="fa fa-user"></i> Profile</li>
+      <li class="active" routerLink="/my-products"><a> My Products</a></li>
+      <li><a> Orders</a></li>
+      <li routerLink="/membership"><a> Subscriptionss</a></li>
+      <li><a routerLink="/teamwork-basic"> Team Work</a></li>
+      <li><a routerLink="/create-promocode"> Promocode</a></li>
+      <li class="logout"><i class="fa fa-sign-out"></i> Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <h3>Welcome Here 👋</h3>
+      <div class="user-profile">
+        <img src="assets/user-avatar.jpg" alt="Brand" />
+        <span>Brand Name</span>
+      </div>
+    </div>
+    <div class="container add-product-container">
+      <h2 class="title">Add New Product</h2>
+
+      <form
+        [formGroup]="productForm"
+        (ngSubmit)="onSubmit()"
+        class="product-form"
+      >
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-md-6 left-section">
+            <div class="form-group">
+              <label>Product Name <span>*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Product Type <span>*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="type"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Available number of products <span>*</span></label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="available"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Product Selling Price <span>*</span></label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="price"
+                  required
+                />
+                <span class="input-group-text text-black">L.E</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Select Color <span>*</span></label>
+              <div class="color-options">
+                <span
+                  *ngFor="let color of ['black', 'red', 'green', 'blue']"
+                  [class.selected]="selectedColors.includes(color)"
+                  [style.backgroundColor]="color"
+                  (click)="toggleColor(color)"
+                >
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="col-md-6 right-section">
+            <div class="form-group">
+              <label>Product Description <span>*</span></label>
+              <textarea
+                class="form-control description-box"
+                formControlName="description"
+                placeholder="Enter description"
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Image <span>*</span></label>
+              <div class="image-upload-box">
+                <input
+                  type="file"
+                  (change)="onFileSelected($event)"
+                  class="file-input"
+                />
+                <p>Attach a picture of the product.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button
+            type="submit"
+            class="btn btn-primary save-btn"
+            [disabled]="productForm.invalid"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

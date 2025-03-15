@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReggOneComponent } from './components/Brand/regg-one/regg-one.component';
@@ -43,6 +44,12 @@ import { TeamworkAddComponent } from './components/Brand/teamwork/teamwork-add/t
 import { ChatsComponent } from './components/Brand/chats/chats.component';
 import { SalesReportComponent } from './components/Brand/sales-report/sales-report.component';
 import { SalesForBrandComponent } from './components/Brand/sales-for-brand/sales-for-brand.component';
+import { MyProductsComponent } from './components/Brand/myProducts/my-products/my-products.component';
+import { MyProductsAddComponent } from './components/Brand/myProducts/my-products-add/my-products-add.component';
+import { MyProductsReportComponent } from './components/Brand/myProducts/my-products-report/my-products-report.component';
+import { MyProductsDetailsComponent } from './components/Brand/myProducts/my-products-details/my-products-details.component';
+import { OrdersComponent } from './components/Brand/brand-orders/orders/orders.component';
+import { OrderDetailsComponent } from './components/Brand/brand-orders/order-details/order-details.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +88,13 @@ import { SalesForBrandComponent } from './components/Brand/sales-for-brand/sales
     TeamworkAddComponent,
     ChatsComponent,
     SalesReportComponent,
-    SalesForBrandComponent
+    SalesForBrandComponent,
+    MyProductsComponent,
+    MyProductsAddComponent,
+    MyProductsReportComponent,
+    MyProductsDetailsComponent,
+    OrdersComponent,
+    OrderDetailsComponent,
 
   ],
   imports: [
@@ -91,6 +104,7 @@ import { SalesForBrandComponent } from './components/Brand/sales-for-brand/sales
     HttpClientModule,
     MatDialogModule,
     FormsModule,
+    NgxPaginationModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     })

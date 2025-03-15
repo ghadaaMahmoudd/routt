@@ -1,0 +1,87 @@
+<div class="dashboard-container">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="assets\Rectangle 29 (1).png" />
+    <ul>
+      <li><i class="fa fa-home"></i> Home</li>
+      <li routerLink="/sales-for-brand">
+        <i class="fa fa-shopping-cart"></i> Sales
+      </li>
+      <li><i class="fa fa-comment"></i> Chat</li>
+      <li routerLink="/brand-profile"><i class="fa fa-user"></i> Profile</li>
+      <li class="active" routerLink="/my-products"><a> My Products</a></li>
+      <li><a> Orders</a></li>
+      <li routerLink="/membership"><a> Subscriptionss</a></li>
+      <li><a routerLink="/teamwork-basic"> Team Work</a></li>
+      <li><a routerLink="/create-promocode"> Promocode</a></li>
+      <li class="logout"><i class="fa fa-sign-out"></i> Logout</li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <h3>Welcome Here 👋</h3>
+      <div class="user-profile">
+        <img src="assets/user-avatar.jpg" alt="Brand" />
+        <span>Brand Name</span>
+      </div>
+    </div>
+    <div class="container">
+      <h2>My Product Report</h2>
+
+      <input
+        type="text"
+        placeholder="Search"
+        [(ngModel)]="searchText"
+        class="search-box"
+      />
+
+      <table>
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Product ID</th>
+            <th>Total Products</th>
+            <th>Sold</th>
+            <th>Remaining</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of paginatedProducts">
+            <td>{{ product.name }}</td>
+            <td>{{ product.id }}</td>
+            <td>{{ product.total }}</td>
+            <td>{{ product.sold }}</td>
+            <td>{{ product.remaining }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pagination">
+        <button
+          (click)="changePage(currentPage - 1)"
+          [disabled]="currentPage === 1"
+        >
+          &lt;
+        </button>
+
+        <button
+          *ngFor="let page of getTotalPages()"
+          (click)="changePage(page)"
+          [class.active]="currentPage === page"
+        >
+          {{ page }}
+        </button>
+
+        <button
+          (click)="changePage(currentPage + 1)"
+          [disabled]="currentPage >= getTotalPages().length"
+        >
+          &gt;
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

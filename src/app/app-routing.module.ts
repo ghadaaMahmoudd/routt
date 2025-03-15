@@ -30,6 +30,12 @@ import { TeamworkAddComponent } from './components/Brand/teamwork/teamwork-add/t
 import { ChatsComponent } from './components/Brand/chats/chats.component';
 import { SalesReportComponent } from './components/Brand/sales-report/sales-report.component';
 import { SalesForBrandComponent } from './components/Brand/sales-for-brand/sales-for-brand.component';
+import { MyProductsComponent } from './components/Brand/myProducts/my-products/my-products.component';
+import { MyProductsAddComponent } from './components/Brand/myProducts/my-products-add/my-products-add.component';
+import { MyProductsReportComponent } from './components/Brand/myProducts/my-products-report/my-products-report.component';
+import { MyProductsDetailsComponent } from './components/Brand/myProducts/my-products-details/my-products-details.component';
+import { OrdersComponent } from './components/Brand/brand-orders/orders/orders.component';
+import { OrderDetailsComponent } from './components/Brand/brand-orders/order-details/order-details.component';
 
 
 
@@ -63,6 +69,12 @@ const routes: Routes = [
    { path: 'chats', component: ChatsComponent },
    { path: 'sales-report', component: SalesReportComponent },
    { path: 'sales-for-brand', component: SalesForBrandComponent },
+   { path: 'my-products', component:MyProductsComponent},
+   { path: 'my-products-add', component:MyProductsAddComponent},
+   { path: 'my-products-report', component:MyProductsReportComponent},
+   { path: 'my-product-details', component:MyProductsDetailsComponent},
+   { path: 'orders', component:OrdersComponent},
+   { path: 'order-details/:id', component:OrderDetailsComponent}
   
 ];
 

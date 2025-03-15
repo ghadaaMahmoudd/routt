@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Details</h2>
+
+  <div class="alert alert-light">
+    Request received, please review the request
+    <button class="btn btn-success float-end">Accept request</button>
+    <button class="btn btn-danger float-end me-2">Request denied</button>
+  </div>
+
+  <div class="card p-3">
+    <h4>Order Details</h4>
+    <p><strong>Order Number:</strong> {{ order?.id }}</p>
+
+    <h4>Product Details</h4>
+    <p><strong>Product Number:</strong> {{ order?.productNumber }}</p>
+    <a href="#">show products</a>
+    <p><strong>Purchase Value:</strong> {{ order?.purchaseValue }} L.E</p>
+
+    <h4>Shipping Details</h4>
+    <p><strong>Shipping Method:</strong> {{ order?.shippingMethod }}</p>
+    <p><strong>Shipping Cost:</strong> {{ order?.shippingCost }} L.E</p>
+    <p><strong>Customer Address:</strong> {{ order?.customerAddress }}</p>
+  </div>
+</div>
