@@ -50,6 +50,9 @@ import { MyProductsReportComponent } from './components/Brand/myProducts/my-prod
 import { MyProductsDetailsComponent } from './components/Brand/myProducts/my-products-details/my-products-details.component';
 import { OrdersComponent } from './components/Brand/brand-orders/orders/orders.component';
 import { OrderDetailsComponent } from './components/Brand/brand-orders/order-details/order-details.component';
+import { HomeNavbarComponent } from './components/User/home-navbar/home-navbar.component';
+import { CollectionsComponent } from './components/User/collections/collections.component';
+import { ProductCardComponent } from './components/User/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +98,9 @@ import { OrderDetailsComponent } from './components/Brand/brand-orders/order-det
     MyProductsDetailsComponent,
     OrdersComponent,
     OrderDetailsComponent,
+    HomeNavbarComponent,
+    CollectionsComponent,
+    ProductCardComponent,
 
   ],
   imports: [

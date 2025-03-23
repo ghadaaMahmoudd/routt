@@ -1,6 +1,33 @@
 <div class="container">
-  <div class="row">
-    <div *ngFor="let product of products" class="col-md-3">
+  <div class="nav-container">
+    <div class="nav-links">
+      <span
+        [class.active]="selectedCategory === 'Best Sellers'"
+        (click)="setActiveCategory('Best Sellers')"
+        >Best Sellers</span
+      >
+      <span
+        [class.active]="selectedCategory === 'New Arrivals'"
+        (click)="setActiveCategory('New Arrivals')"
+        >New Arrivals</span
+      >
+      <span
+        [class.active]="selectedCategory === 'Sale'"
+        (click)="setActiveCategory('Sale')"
+        >Sale</span
+      >
+    </div>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchText" placeholder="🔍 Search" />
+  </div>
+
+  <div class="row mt-4">
+    <div
+      class="col-md-4"
+      *ngFor="let product of filteredProducts | slice : 0 : visibleProducts"
+    >
       <div class="card">
         <img
           [src]="product.image"
@@ -10,10 +37,24 @@
         <div class="card-body">
           <h5 class="card-title">{{ product.name }}</h5>
           <p class="card-text">{{ product.description }}</p>
-          <p class="price">{{ product.price }} L.E</p>
-          <button class="btn btn-primary">Add to Cart</button>
+          <p>
+            <strong>{{ product.price }} $</strong>
+          </p>
+          <button class="btn btn-outline-dark" routerLink="/cart">
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>
+  </div>
+
+  <div class="text-center mt-4">
+    <button
+      class="btn btn-dark"
+      (click)="loadMore()"
+      *ngIf="visibleProducts < filteredProducts.length"
+    >
+      See more ♥
+    </button>
   </div>
 </div>

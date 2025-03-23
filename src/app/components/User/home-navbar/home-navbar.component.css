@@ -1,0 +1,71 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+.navbar {
+  border-bottom: 1px solid #ddd;
+  padding: 1px 10px;
+}
+
+.brand-logo {
+  height: 50px;
+  width: auto;
+}
+
+.brand-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-left: 5px;
+  color: #E68332; 
+  vertical-align: middle;
+}
+
+/* Navbar Links */
+.navbar-nav .nav-link {
+  color: black;
+  font-weight: 500;
+  margin: 0 10px;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .active-link {
+  color: #E68332; 
+  text-decoration: underline;
+}
+
+.search-box {
+  position: relative;
+}
+
+.search-box .form-control {
+  width: 180px;
+  border-radius: 20px;
+  padding-right: 30px;
+  background-color: #f1f1f1;
+  border: none;
+}
+
+.search-box .search-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: gray;
+}
+
+/* Icon Links */
+.icon-links .icon {
+  margin: 0 8px;
+  font-size: 18px;
+  color: black;
+}
+
+.icon-links .icon:hover {
+  color: #E68332; 
+}
+
+.profile-icon {
+  background: #E68332;
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+}

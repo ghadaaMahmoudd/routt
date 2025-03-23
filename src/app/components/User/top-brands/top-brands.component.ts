@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 export class TopBrandsComponent {
 
   brands = [
-    { name: "Sweety", logo: "assets/Ellipse 6.png" },
-    { name: "Fashionista", logo: "assets/Ellipse 6.png" },
-    { name: "Elite", logo: "assets/Ellipse 6.png" },
-    { name: "TrendSet", logo: "assets/Ellipse 6.png" }
+    { name: "Sweety", image: "assets/Ellipse 6.png" },
+    { name: "Fashionista", image: "assets/Ellipse 6.png" },
+    { name: "Elite", image: "assets/Ellipse 6.png" },
+    { name: "TrendSet", image: "assets/Ellipse 6.png" }
   ];
 }

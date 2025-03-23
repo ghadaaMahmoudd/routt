@@ -36,6 +36,8 @@ import { MyProductsReportComponent } from './components/Brand/myProducts/my-prod
 import { MyProductsDetailsComponent } from './components/Brand/myProducts/my-products-details/my-products-details.component';
 import { OrdersComponent } from './components/Brand/brand-orders/orders/orders.component';
 import { OrderDetailsComponent } from './components/Brand/brand-orders/order-details/order-details.component';
+import { HomeNavbarComponent } from './components/User/home-navbar/home-navbar.component';
+import { CollectionsComponent } from './components/User/collections/collections.component';
 
 
 
@@ -74,7 +76,9 @@ const routes: Routes = [
    { path: 'my-products-report', component:MyProductsReportComponent},
    { path: 'my-product-details', component:MyProductsDetailsComponent},
    { path: 'orders', component:OrdersComponent},
-   { path: 'order-details/:id', component:OrderDetailsComponent}
+   { path: 'order-details/:id', component:OrderDetailsComponent},
+   { path: 'home-navbar', component:HomeNavbarComponent},
+   { path: 'collections', component:CollectionsComponent}
   
 ];
 

@@ -1,0 +1,72 @@
+<app-home-navbar></app-home-navbar>
+
+<!-- Collections Section -->
+<section class="collections-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h2 class="section-title">Collections</h2>
+        <p class="section-text">
+          You can explore and shop many different collections from various
+          brands here.
+        </p>
+        <a href="#" class="shop-btn">
+          <i class="fas fa-shopping-bag"></i> Shop Now
+        </a>
+      </div>
+      <div class="col-md-6">
+        <div class="image-container">
+          <img
+            src="assets\Rectangle 75.png"
+            alt="Collections"
+            class="collection-image"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sales Section -->
+<section class="product-section">
+  <div class="container">
+    <h2 class="section-heading">Sales</h2>
+    <div class="row">
+      <div class="col-md-3 col-sm-6" *ngFor="let product of salesProducts">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Best Selling Products Section -->
+<section class="product-section">
+  <div class="container">
+    <h2 class="section-heading">Best Selling Products</h2>
+    <p class="subheading">This month</p>
+    <div class="row">
+      <div
+        class="col-md-3 col-sm-6"
+        *ngFor="let product of bestSellingProducts"
+      >
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- New Arrival Section -->
+<section class="new-arrival-section">
+  <div class="container">
+    <h2 class="section-heading">New Arrival</h2>
+    <div class="arrival-grid">
+      <div class="arrival-card" *ngFor="let item of newArrivals">
+        <img [src]="item.image" alt="{{ item.name }}" class="arrival-image" />
+        <div class="arrival-info">
+          <h3>{{ item.name }}</h3>
+          <p>{{ item.description }}</p>
+          <a href="#" class="shop-now">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

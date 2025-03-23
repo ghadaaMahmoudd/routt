@@ -1,6 +1,21 @@
-<div class="p-3" *ngFor="let review of reviews">
-  <p>{{ review.feedback }}</p>
-  <strong>{{ review.name }}</strong>
-  <p>⭐ Rating: {{ review.rating }}/5</p>
+<!-- Customer Reviews Section -->
+<div class="customer-reviews">
+  <div class="reviews-header">
+    <span>What is Everyone Saying?</span>
+  </div>
+
+  <div class="reviews-container">
+    <div class="review-card" *ngFor="let review of reviews">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>{{ review.text }}</p>
+      <div class="reviewer">
+        <img
+          [src]="review.image"
+          alt="{{ review.name }}"
+          class="reviewer-image"
+        />
+        <span>{{ review.name }}</span>
+      </div>
+    </div>
+  </div>
 </div>
-<h1 style="color: red">Hello from Reviews Component</h1>

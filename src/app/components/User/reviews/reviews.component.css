@@ -1,0 +1,56 @@
+/* Customer Reviews Section */
+.customer-reviews {
+    margin-top: 40px;
+    background-color: #fdf6f1;
+    padding: 40px 0;
+    position: relative;
+  }
+  
+  .reviews-header {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #26201c;
+    color: #ffb75e;
+    padding: 30px;
+    border-radius: 0 50px 50px 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-left: 150px;
+  }
+  
+  .review-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 250px;
+  }
+  
+  .stars {
+    color: #ffb400;
+    font-size: 18px;
+  }
+  
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .reviewer-image {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  

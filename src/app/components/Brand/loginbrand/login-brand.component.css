@@ -1,3 +1,4 @@
+
 .container {
     display: flex;
     justify-content: center;
@@ -89,7 +90,7 @@
     width: 30%;
     padding: 10px;
     border: none;
-    margin: 5px 110px;
+    margin: 5px 130px;
     border-radius: 15px;
     margin-top: 10px;
     font-weight: bold;

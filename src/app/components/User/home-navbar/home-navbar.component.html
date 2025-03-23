@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="assets\Rectangle 68.png" alt="Brand Logo" class="brand-logo" />
+    </a>
+
+    <!-- Navbar Toggler for Mobile -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            routerLink="/"
+            routerLinkActive="active-link"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Search & Icons -->
+    <div class="d-flex align-items-center">
+      <div class="search-box">
+        <input type="text" class="form-control" placeholder="Search here" />
+        <button class="btn search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <div class="icon-links ms-3">
+        <a href="#" class="icon">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="#" class="icon">
+          <i class="far fa-heart"></i>
+        </a>
+        <a href="#" class="icon profile-icon">
+          <i class="fas fa-user"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

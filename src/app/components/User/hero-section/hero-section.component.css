@@ -3,10 +3,19 @@
     background: #fceddf;
     padding: 130px 60px;
     width: 45%;
-    height: 490px;
+    height: 430px;
     text-align: center;
     margin-bottom: 20px;
     
+  }
+
+  .left-side .shop-btn{
+    background-color: #E68332;
+    border: none;
+    color: white;
+    padding: 5px 30px;;
+    border-radius: 10px;
+    margin-top: 30px;
   }
   .highlight {
     color: #E68332;
@@ -20,4 +29,10 @@
     margin-left: 130px;
     margin-bottom: 20px;
   }
-  
+.right-side .logo-img{
+  width: 220px;
+  margin-left: 90px;
+}  
+.right-side .hero-img{
+  width: 400px;
+}
