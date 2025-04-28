@@ -1,0 +1,112 @@
+<app-home-navbar></app-home-navbar>
+
+<div class="our-story-section">
+  <div class="content-container">
+    <!-- Text Content -->
+    <div class="text-content">
+      <h2 class="heading">Our Story</h2>
+      <p>
+        At Brandfy, we believe shopping should be effortless, inspiring, and all
+        in one place. That’s why we created a platform that brings together your
+        favorite brands—along with new ones waiting to be discovered—into a
+        seamless shopping experience.
+      </p>
+      <p>
+        Our journey started with a simple idea: Why search across multiple
+        stores when you can find everything in one destination? Whether you're
+        looking for fashion, beauty, home essentials, or lifestyle products,
+        Brandfy curates the best selections from top brands, making shopping
+        more convenient than ever.
+      </p>
+      <p>
+        At Brandfy, we believe shopping should be effortless, inspiring, and all
+        in one place. That’s why we created a platform that brings together your
+        favorite brands—along with new ones waiting to be discovered—into a
+        seamless shopping experience.
+      </p>
+    </div>
+
+    <!-- Image -->
+    <div class="image-container">
+      <div class="image-border"></div>
+      <img
+        src="assets\Rectangle 75.png"
+        alt="Shopping girl"
+        class="story-image"
+      />
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-item">
+      <h3>840+</h3>
+      <p>employees</p>
+    </div>
+    <div class="stat-item">
+      <h3>1500+</h3>
+      <p>Brands</p>
+    </div>
+    <div class="stat-item">
+      <h3>200K+</h3>
+      <p>Users</p>
+    </div>
+  </div>
+</div>
+
+<div class="developer-section">
+  <div class="developer-container">
+    <!-- Image -->
+    <div class="developer-image-container">
+      <div class="developer-border"></div>
+      <img
+        src="assets/Rectangle 2467.png"
+        alt="Developer Team"
+        class="developer-image"
+      />
+    </div>
+
+    <!-- Text -->
+    <div class="developer-text">
+      <h2 class="developer-heading">Meet Our Developers</h2>
+      <p>
+        Behind every smooth and seamless shopping experience on Brandfy is a
+        team of passionate and skilled developers. Our tech experts work
+        tirelessly to build a fast, secure, and user-friendly platform that
+        connects shoppers with their favorite brands effortlessly.
+      </p>
+      <p>
+        From cutting-edge technology to intuitive design, our developers ensure
+        that every feature is optimized to provide the best possible experience.
+      </p>
+      <p>
+        Whether it’s enhancing website performance, integrating new brands, or
+        ensuring a secure checkout process, our team is dedicated to making
+        Brandfy the ultimate shopping destination.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="team-section">
+  <div class="team-grid">
+    <div class="team-card" *ngFor="let member of teamMembers">
+      <img [src]="member.image" alt="{{ member.name }}" class="team-image" />
+      <div class="team-info">
+        <h3>{{ member.name }}</h3>
+        <p>{{ member.role }}</p>
+        <div class="team-icons">
+          <a
+            *ngFor="let icon of member.socials"
+            [href]="icon.link"
+            target="_blank"
+          >
+            <i [class]="icon.iconClass"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

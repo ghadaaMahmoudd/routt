@@ -1,0 +1,109 @@
+.orders-container {
+    padding: 20px;
+  }
+  
+  .title {
+    color: #d66b1f;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .search-sort-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .search-sort-bar input {
+    width: 60%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .sort-btn {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  .order-card {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background: #fff;
+  }
+  
+  .order-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .order-details {
+    flex: 1;
+  }
+  
+  .order-details a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .star {
+    font-size: 16px;
+    color: #ccc;
+  }
+  
+  .star.filled {
+    color: gold;
+  }
+  
+  .order-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  
+  .order-actions a {
+    font-size: 14px;
+    color: #007bff;
+    margin-bottom: 8px;
+  }
+  
+  .reorder-btn {
+    padding: 6px 12px;
+    border: 1px solid #f58820;
+    background-color: white;
+    color: #f58820;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .pagination {
+    display: flex;
+    gap: 6px;
+    justify-content: flex-start;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .pagination button.active {
+    background-color: #f58820;
+    color: white;
+    font-weight: bold;
+  }
+  

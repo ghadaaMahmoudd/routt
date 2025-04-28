@@ -11,7 +11,8 @@ import { RegThreeComponent } from './components/Brand/reg-three/reg-three.compon
 import { LoginAdminComponent } from './components/Admin/loginadmin/login-admin.component';
 import { ForgetPasswordBrandComponent } from './components/Brand/forget-password-brand/forget-password-brand.component';
 import { ChangePasswordBrandComponent } from './components/Brand/change-password-brand/change-password-brand.component';
-import{HttpClientModule}from'@angular/common/http';
+import{HttpClientModule ,HTTP_INTERCEPTORS}from'@angular/common/http';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { CartComponent } from './components/User/cart/cart.component';
 import { ProductDetailsComponent } from './components/User/product-details/product-details.component';
 import { MembershipComponent } from './components/Brand/membership/membership.component';
@@ -53,6 +54,14 @@ import { OrderDetailsComponent } from './components/Brand/brand-orders/order-det
 import { HomeNavbarComponent } from './components/User/home-navbar/home-navbar.component';
 import { CollectionsComponent } from './components/User/collections/collections.component';
 import { ProductCardComponent } from './components/User/product-card/product-card.component';
+import { ManageAccountComponent } from './components/User/manage-account/manage-account.component';
+import { UserOrdersComponent } from './components/User/user-orders/user-orders.component';
+import { ContactComponent } from './components/User/contact/contact.component';
+import { FavoritesComponent } from './components/User/favorites/favorites.component';
+import { AboutComponent } from './components/User/about/about.component';
+import { ProductPageComponent } from './components/User/product-page/product-page.component';
+import { EmptyCartComponent } from './components/User/empty-cart/empty-cart.component';
+
 
 @NgModule({
   declarations: [
@@ -101,10 +110,22 @@ import { ProductCardComponent } from './components/User/product-card/product-car
     HomeNavbarComponent,
     CollectionsComponent,
     ProductCardComponent,
+    ManageAccountComponent,
+    UserOrdersComponent,
+    ContactComponent,
+    FavoritesComponent,
+    AboutComponent,
+    ProductPageComponent,
+    EmptyCartComponent,
+
 
   ],
+  
+    
+
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -117,7 +138,13 @@ import { ProductCardComponent } from './components/User/product-card/product-car
   ]
 
   ,
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

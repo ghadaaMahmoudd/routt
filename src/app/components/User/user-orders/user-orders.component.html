@@ -1,0 +1,106 @@
+<app-home-navbar></app-home-navbar>
+<div class="orders-container">
+  <h2 class="title">My Orders</h2>
+
+  <!-- If there are orders -->
+  <div *ngIf="orders.length > 0; else noOrders">
+    <div class="search-sort-bar">
+      <input type="text" placeholder="Search here" />
+      <button class="sort-btn">Most recent &#9662;</button>
+    </div>
+
+    <div class="order-card" *ngFor="let order of orders">
+      <img [src]="order.imageUrl" alt="Order Image" class="order-img" />
+      <div class="order-details">
+        <p>
+          {{ order.date }} &nbsp; | &nbsp; Order Number {{ order.orderNumber }}
+        </p>
+        <p>{{ order.products }} <a href="#">See details</a></p>
+        <p>
+          Rate & Review
+          <span *ngFor="let star of [1, 2, 3, 4, 5]">
+            <i class="star" [class.filled]="star <= order.rating">&#9733;</i>
+          </span>
+        </p>
+      </div>
+      <div class="order-actions">
+        <a
+          (click)="viewOrderDetails(order)"
+          data-bs-toggle="modal"
+          data-bs-target="#orderDetailsModal"
+        >
+          View All Order ({{ order.products.length }})
+        </a>
+        <button class="reorder-btn">ReOrder</button>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button (click)="prevPage()" [disabled]="currentPage === 1">&lt;</button>
+      <button
+        *ngFor="let page of pageNumbers"
+        (click)="changePage(page)"
+        [class.active]="page === currentPage"
+      >
+        {{ page }}
+      </button>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+        &gt;
+      </button>
+    </div>
+  </div>
+  <!-- If no orders -->
+  <ng-template #noOrders>
+    <div class="no-orders">
+      <img src="assets/mdi_shopping-cart-remove.png" alt="No Orders" />
+      <p>No orders yet</p>
+      <p>
+        Go to <a routerLink="/product-page">product</a> and start shopping Now!
+      </p>
+    </div>
+  </ng-template>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="orderDetailsModal"
+  tabindex="-1"
+  aria-labelledby="orderDetailsModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-orange" id="orderDetailsModalLabel">
+          View order Details
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body" *ngIf="selectedOrder">
+        <div class="row">
+          <div class="col-md-4" *ngFor="let item of selectedOrder.products">
+            <div class="card mb-3 text-center">
+              <img
+                [src]="item.imageUrl"
+                class="card-img-top"
+                [alt]="item.name"
+                style="height: 100px; object-fit: cover"
+              />
+              <div class="card-body p-2">
+                <h6 class="card-title m-0">{{ item.name }}</h6>
+                <p class="text-muted m-0">{{ item.price }}€</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

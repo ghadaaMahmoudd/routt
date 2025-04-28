@@ -4,11 +4,6 @@
 }
 
 
-
-
-
-
-
 .cart-content {
   display: flex;
   justify-content: space-between;
@@ -108,6 +103,7 @@
   width: 100%;
   background-color: green;
   color: white;
+  border-radius: 5px;
   padding: 10px;
   border: none;
   cursor: pointer;
