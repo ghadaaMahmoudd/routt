@@ -1,0 +1,21 @@
+<div class="card-box">
+  <h6 class="mb-3">Top 3 Brand</h6>
+  <table class="table table-sm align-middle">
+    <thead>
+      <tr>
+        <th>Brand Name</th>
+        <th>Total Orders</th>
+        <th>Total Profit</th>
+        <th>Rank</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brand of topBrands">
+        <td>{{ brand.name }}</td>
+        <td>{{ brand.orders }}</td>
+        <td>{{ brand.profit }}</td>
+        <td>{{ brand.rank }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

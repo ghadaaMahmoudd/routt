@@ -62,6 +62,31 @@ import { AboutComponent } from './components/User/about/about.component';
 import { ProductPageComponent } from './components/User/product-page/product-page.component';
 import { EmptyCartComponent } from './components/User/empty-cart/empty-cart.component';
 
+// import { BrowserModule } from '@angular/platform-browser';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { AppRoutingModule } from './app-routing.module';
+// import { AppComponent } from './app.component';
+import { SidebarComponent } from './components/Admin/admin/sidebar/sidebar.component';
+import { HeaderComponent } from './components/Admin/admin/header/header.component';
+import { FilterComponent } from './components/Admin/admin/filter/filter.component';
+import { DashboardComponent } from './components/Admin/admin/dashboard/dashboard.component';
+import { AdminComponent } from './components/Admin/admin/admin/admin.component';
+// import { NgChartsModule } from 'ng2-charts';
+import { SummaryCardsComponent } from './components/Admin/admin/summary-cards/summary-cards.component';
+import { MonthlyTargetComponent } from './components/Admin/admin/monthly-target/monthly-target.component';
+import { ActivateUserComponent } from './components/Admin/admin/activate-user/activate-user.component';
+import { TopBrandComponent } from './components/Admin/admin/top-brand/top-brand.component';
+import { BrandManagmentComponent } from './components/Admin/admin/brand-managment/brand-managment.component';
+import { ClientManagmentComponent } from './components/Admin/admin/client-managment/client-managment.component';
+import { RequestManagmentComponent } from './components/Admin/admin/request-managment/request-managment.component';
+import { FinancialManagmentComponent } from './components/Admin/admin/financial-managment/financial-managment.component';
+import { OrderManagmentComponent } from './components/Admin/admin/order-managment/order-managment.component';
+import { ProductManagmentComponent } from './components/Admin/admin/product-managment/product-managment.component';
+import { PromocodeManagmentComponent } from './components/Admin/admin/promocode-managment/promocode-managment.component';
+import { SettingComponent } from './components/Admin/admin/setting/setting.component';
+import { TryingComponent } from './components/Admin/admin/trying/trying.component';
+
+
 
 @NgModule({
   declarations: [
@@ -117,6 +142,24 @@ import { EmptyCartComponent } from './components/User/empty-cart/empty-cart.comp
     AboutComponent,
     ProductPageComponent,
     EmptyCartComponent,
+    SidebarComponent,
+    HeaderComponent,
+    FilterComponent,
+    DashboardComponent,
+    AdminComponent,
+    SummaryCardsComponent,
+    MonthlyTargetComponent,
+    ActivateUserComponent,
+    TopBrandComponent,
+    BrandManagmentComponent,
+    ClientManagmentComponent,
+    FinancialManagmentComponent,
+    OrderManagmentComponent,
+    ProductManagmentComponent,
+    PromocodeManagmentComponent,
+    RequestManagmentComponent,
+    SettingComponent,
+    TryingComponent
 
 
   ],

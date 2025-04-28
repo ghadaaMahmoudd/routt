@@ -1,0 +1,43 @@
+.progress-percentage {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 26px;
+}
+.target {
+  background-color: #f5cdad;
+}
+.hr-v {
+  background-color: #e68332;
+  width: 2px;
+}
+.btn-solid-main,
+.btn-solid-main:hover,
+.btn-solid-main:focus {
+  background-color: #e68332;
+  border-color: #e68332;
+}
+.card {
+  background-color: #fffaf2;
+  border: none;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-size: 1rem;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1.25rem;
+  color: #000;
+}
+
+.icon-img {
+  width: 40px;
+  height: 40px;
+}
