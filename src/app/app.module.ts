@@ -1,8 +1,11 @@
-import { NgModule } from '@angular/core';
+import { NgModule , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+// import { AppRoutingModule } from './app-routing.module';
+import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
+// import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReggOneComponent } from './components/Brand/regg-one/regg-one.component';
@@ -71,7 +74,7 @@ import { HeaderComponent } from './components/Admin/admin/header/header.componen
 import { FilterComponent } from './components/Admin/admin/filter/filter.component';
 import { DashboardComponent } from './components/Admin/admin/dashboard/dashboard.component';
 import { AdminComponent } from './components/Admin/admin/admin/admin.component';
-// import { NgChartsModule } from 'ng2-charts';
+import { NgChartsModule } from 'ng2-charts';
 import { SummaryCardsComponent } from './components/Admin/admin/summary-cards/summary-cards.component';
 import { MonthlyTargetComponent } from './components/Admin/admin/monthly-target/monthly-target.component';
 import { ActivateUserComponent } from './components/Admin/admin/activate-user/activate-user.component';
@@ -145,8 +148,9 @@ import { TryingComponent } from './components/Admin/admin/trying/trying.componen
     SidebarComponent,
     HeaderComponent,
     FilterComponent,
-    DashboardComponent,
     AdminComponent,
+    DashboardComponent ,
+
     SummaryCardsComponent,
     MonthlyTargetComponent,
     ActivateUserComponent,
@@ -163,31 +167,37 @@ import { TryingComponent } from './components/Admin/admin/trying/trying.componen
 
 
   ],
-  
-    
+
+
 
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
+    // AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatDialogModule,
+    BrowserAnimationsModule ,
+    MatDialogModule ,
     FormsModule,
+    NgChartsModule ,
+    CommonModule,
+     RouterModule,
     NgxPaginationModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     })
   ]
 
+
   ,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
     }
-  ], 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
