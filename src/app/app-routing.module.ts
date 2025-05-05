@@ -1,6 +1,6 @@
 // import { NgModule } from '@angular/core';
  import { RouterModule, Routes } from '@angular/router';
- 
+
 
 import { ReggOneComponent } from './components/Brand/regg-one/regg-one.component';
 import { RegisterComponent } from './components/Brand/register/register.component';
@@ -65,10 +65,11 @@ import { ProductManagmentComponent } from './components/Admin/admin/product-mana
 import { PromocodeManagmentComponent } from './components/Admin/admin/promocode-managment/promocode-managment.component';
 import { SettingComponent } from './components/Admin/admin/setting/setting.component';
 import { TryingComponent } from './components/Admin/admin/trying/trying.component';
+import { NgModule } from '@angular/core';
 
 
-  
- 
+
+
 
 
 
@@ -137,7 +138,7 @@ const routes: Routes = [
    {path:'promocode-managment',component:PromocodeManagmentComponent},
    {path:'financial-managment',component:FinancialManagmentComponent},
    {path:'request-managment',component:RequestManagmentComponent},
-  
+
 ];
 
 @NgModule({

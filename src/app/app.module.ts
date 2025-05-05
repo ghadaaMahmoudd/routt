@@ -1,6 +1,7 @@
 import { NgModule , CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-// import { AppRoutingModule } from './app-routing.module';
+
+ import { AppRoutingModule } from './app-routing.module';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from 'ngx-pagination';
@@ -173,7 +174,7 @@ import { TryingComponent } from './components/Admin/admin/trying/trying.componen
   imports: [
     BrowserModule,
     HttpClientModule,
-    // AppRoutingModule,
+     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule ,
