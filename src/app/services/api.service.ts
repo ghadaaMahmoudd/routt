@@ -8,14 +8,14 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
   private baseUrl = 'http://localhost:5090/api';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   registerBrand(payload: any) {
     return this.http.post(`${this.baseUrl}/Account/register/Brand`, payload);
   }
 
   createBrand(formData: FormData) {
-    return this.http.post(`${this.baseUrl}/brands`, formData);
+    return this.http.post(`${this.baseUrl}/brands`, formData, { withCredentials: true });
   }
 
   getCategories() {
