@@ -1,3 +1,8 @@
+//
+
+
+
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,6 +15,8 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class ReggOneComponent {
   registrationForm: FormGroup;
+  isLoading: boolean = false; // حالة التحميل
+  errorMessage: string | null = null; // رسالة الخطأ
 
   constructor(
     private fb: FormBuilder,
@@ -27,42 +34,47 @@ export class ReggOneComponent {
 
   onSubmit() {
     if (this.registrationForm.valid) {
-      const { fullName, email, phoneNumber, password } = this.registrationForm.value;
-      const [displayName, ...lastParts] = fullName.trim().split(' ');
+      this.isLoading = true; // بدء التحميل
+      this.errorMessage = null; // تفريغ رسائل الخطأ
+
+      const { fullName, email, phoneNumber, password, gender } = this.registrationForm.value;
+
+      // تقسيم الاسم الأول والأخير
+      const [firstName, ...lastParts] = fullName.trim().split(' ');
       const lastName = lastParts.join(' ') || '';
-  
+
       const payload = {
         email,
         phoneNumber,
         password,
-        displayName,
+        gender,
+        firstName,
         lastName
       };
 
-      console.log('📦 Payload being sent:', payload);
-
+      // إرسال البيانات إلى الـ API
       this.api.registerBrand(payload).subscribe(
         (res: any) => {
-          console.log('✅ API Response:', res);
-
-          const token = res.token || res.accessToken || res.jwt || null; // حسب اسم التوكن اللي بيرجعه API
-          const userType = res.userType || res.role || 'Brand'; // حسب ما بيرجعلك السيرفر
+          this.isLoading = false; // إنهاء التحميل
+          const token = res.token || res.accessToken || res.jwt || null; // حسب اسم التوكن
+          const userType = res.userType || res.role || 'Brand'; // حسب السيرفر
 
           if (token) {
             localStorage.setItem('token', token);
             localStorage.setItem('userType', userType);
 
-            this.router.navigate(['/register']); // الخطوة الثانية
+            this.router.navigate(['/register/step-2']); // الانتقال للخطوة التالية
           } else {
-            console.warn('❌ Token or userType missing in response');
+            this.errorMessage = 'Unexpected response from server. Please try again.';
           }
         },
         (err: any) => {
-          console.error('❌ Registration failed:', err);
+          this.isLoading = false; // إنهاء التحميل
+          this.errorMessage = err.error?.message || 'Registration failed. Please try again.';
         }
       );
     } else {
-      console.warn('⚠️ Registration form is invalid.');
+      this.errorMessage = 'Please fill out all required fields correctly.';
     }
   }
 }

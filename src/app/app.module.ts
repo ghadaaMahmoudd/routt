@@ -70,11 +70,11 @@ import { EmptyCartComponent } from './components/User/empty-cart/empty-cart.comp
 // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { AppRoutingModule } from './app-routing.module';
 // import { AppComponent } from './app.component';
-import { SidebarComponent } from './components/Admin/admin/sidebar/sidebar.component';
-import { HeaderComponent } from './components/Admin/admin/header/header.component';
-import { FilterComponent } from './components/Admin/admin/filter/filter.component';
+// import { SidebarComponent } from './components/Admin/admin/sidebar/sidebar.component';
+// import { HeaderComponent } from './components/Admin/admin/header/header.component';
+// import { FilterComponent } from './components/Admin/admin/filter/filter.component';
 import { DashboardComponent } from './components/Admin/admin/dashboard/dashboard.component';
-import { AdminComponent } from './components/Admin/admin/admin/admin.component';
+// import { AdminComponent } from './components/Admin/admin/admin/admin.component';
 import { NgChartsModule } from 'ng2-charts';
 import { SummaryCardsComponent } from './components/Admin/admin/summary-cards/summary-cards.component';
 import { MonthlyTargetComponent } from './components/Admin/admin/monthly-target/monthly-target.component';
@@ -87,7 +87,7 @@ import { FinancialManagmentComponent } from './components/Admin/admin/financial-
 import { OrderManagmentComponent } from './components/Admin/admin/order-managment/order-managment.component';
 import { ProductManagmentComponent } from './components/Admin/admin/product-managment/product-managment.component';
 import { PromocodeManagmentComponent } from './components/Admin/admin/promocode-managment/promocode-managment.component';
-import { SettingComponent } from './components/Admin/admin/setting/setting.component';
+// import { SettingComponent } from './components/Admin/admin/setting/setting.component';
 import { TryingComponent } from './components/Admin/admin/trying/trying.component';
 
 
@@ -146,10 +146,10 @@ import { TryingComponent } from './components/Admin/admin/trying/trying.componen
     AboutComponent,
     ProductPageComponent,
     EmptyCartComponent,
-    SidebarComponent,
-    HeaderComponent,
-    FilterComponent,
-    AdminComponent,
+    // SidebarComponent,
+    // HeaderComponent,
+    // FilterComponent,
+    // AdminComponent,
     DashboardComponent ,
 
     SummaryCardsComponent,
@@ -163,7 +163,7 @@ import { TryingComponent } from './components/Admin/admin/trying/trying.componen
     ProductManagmentComponent,
     PromocodeManagmentComponent,
     RequestManagmentComponent,
-    SettingComponent,
+    // SettingComponent,
     TryingComponent
 
 

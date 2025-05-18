@@ -5,7 +5,8 @@ declare var bootstrap: any;
 @Component({
   selector: 'app-setting',
   templateUrl: './setting.component.html',
-  styleUrls: ['./setting.component.css']
+  styleUrls: ['./setting.component.css'],
+    standalone:true,imports:[],
 })
 export class SettingComponent {
   saveChanges(): void {

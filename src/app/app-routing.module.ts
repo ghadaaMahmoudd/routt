@@ -124,13 +124,21 @@ const routes: Routes = [
    { path: 'about', component:AboutComponent},
    { path: 'product-page', component:ProductPageComponent},
    { path: 'empty-cart', component:EmptyCartComponent},
-   {path:'admin' , component:AdminComponent},
+   {path:'admin' , component:AdminComponent
+    ,children:[
+
+   {path:'app-dashboard' , component:DashboardComponent},
+   {path:'brand-managment',component:BrandManagmentComponent},
+   {path:'setting',component:SettingComponent},
+   {path:'test',component:TryingComponent},
+    ]
+   },
    {path:'app-header' , component:HeaderComponent},
    {path:'app-sidebar' , component:SidebarComponent},
    {path:'app-filter' , component:FilterComponent},
    {path:'app-dashboard' , component:DashboardComponent},
    {path:'brand-managment',component:BrandManagmentComponent},
-   {path:'setting',component:SettingComponent},
+  //  {path:'setting',component:SettingComponent},
    {path:'test',component:TryingComponent},
    {path:'product-managment',component:ProductManagmentComponent},
    {path:'client-managment',component:ClientManagmentComponent},
