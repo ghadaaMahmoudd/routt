@@ -1,9 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 declare var bootstrap: any;
 @Component({
   selector: 'app-product-managment',
   templateUrl: './product-managment.component.html',
-  styleUrls: ['./product-managment.component.css']
+  styleUrls: ['./product-managment.component.css'],
+     standalone:true,imports:[
+          CommonModule,
+          FormsModule,
+          ReactiveFormsModule,
+     ],
 })
 export class ProductManagmentComponent {
   brands: Array<{

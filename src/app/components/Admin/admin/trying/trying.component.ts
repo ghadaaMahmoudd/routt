@@ -149,12 +149,20 @@
 
 
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 declare var bootstrap: any;
 
 @Component({
   selector: 'app-trying',
   templateUrl: './trying.component.html',
-  styleUrls: ['./trying.component.css']
+  styleUrls: ['./trying.component.css'],
+     standalone:true,imports:[
+      CommonModule,
+      FormsModule,
+      ReactiveFormsModule,
+      
+     ],
 })
 export class TryingComponent {
   // تعريف المتغير brands كمصفوفة

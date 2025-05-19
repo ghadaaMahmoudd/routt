@@ -1,9 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 declare var bootstrap: any;
 @Component({
   selector: 'app-request-managment',
   templateUrl: './request-managment.component.html',
-  styleUrls: ['./request-managment.component.css']
+  styleUrls: ['./request-managment.component.css'],
+     standalone:true,imports:[
+CommonModule,
+FormsModule,
+ReactiveFormsModule,
+     ],
 })
 export class RequestManagmentComponent {
 

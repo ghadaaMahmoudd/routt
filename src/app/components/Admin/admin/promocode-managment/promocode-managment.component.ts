@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
 import { FormControl,FormGroup,Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 declare var bootstrap: any;
 @Component({
   selector: 'app-promocode-managment',
   templateUrl: './promocode-managment.component.html',
-  styleUrls: ['./promocode-managment.component.css']
+  styleUrls: ['./promocode-managment.component.css'],
+     standalone:true,imports:[
+          CommonModule,
+          FormsModule,
+          ReactiveFormsModule,
+     ],
 })
 export class PromocodeManagmentComponent {
 

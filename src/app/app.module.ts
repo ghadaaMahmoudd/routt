@@ -80,15 +80,15 @@ import { SummaryCardsComponent } from './components/Admin/admin/summary-cards/su
 import { MonthlyTargetComponent } from './components/Admin/admin/monthly-target/monthly-target.component';
 import { ActivateUserComponent } from './components/Admin/admin/activate-user/activate-user.component';
 import { TopBrandComponent } from './components/Admin/admin/top-brand/top-brand.component';
-import { BrandManagmentComponent } from './components/Admin/admin/brand-managment/brand-managment.component';
-import { ClientManagmentComponent } from './components/Admin/admin/client-managment/client-managment.component';
-import { RequestManagmentComponent } from './components/Admin/admin/request-managment/request-managment.component';
-import { FinancialManagmentComponent } from './components/Admin/admin/financial-managment/financial-managment.component';
-import { OrderManagmentComponent } from './components/Admin/admin/order-managment/order-managment.component';
-import { ProductManagmentComponent } from './components/Admin/admin/product-managment/product-managment.component';
-import { PromocodeManagmentComponent } from './components/Admin/admin/promocode-managment/promocode-managment.component';
+// import { BrandManagmentComponent } from './components/Admin/admin/brand-managment/brand-managment.component';
+// import { ClientManagmentComponent } from './components/Admin/admin/client-managment/client-managment.component';
+// import { RequestManagmentComponent } from './components/Admin/admin/request-managment/request-managment.component';
+// import { FinancialManagmentComponent } from './components/Admin/admin/financial-managment/financial-managment.component';
+// import { OrderManagmentComponent } from './components/Admin/admin/order-managment/order-managment.component';
+// import { ProductManagmentComponent } from './components/Admin/admin/product-managment/product-managment.component';
+// import { PromocodeManagmentComponent } from './components/Admin/admin/promocode-managment/promocode-managment.component';
 // import { SettingComponent } from './components/Admin/admin/setting/setting.component';
-import { TryingComponent } from './components/Admin/admin/trying/trying.component';
+// import { TryingComponent } from './components/Admin/admin/trying/trying.component';
 
 
 
@@ -156,15 +156,15 @@ import { TryingComponent } from './components/Admin/admin/trying/trying.componen
     MonthlyTargetComponent,
     ActivateUserComponent,
     TopBrandComponent,
-    BrandManagmentComponent,
-    ClientManagmentComponent,
-    FinancialManagmentComponent,
-    OrderManagmentComponent,
-    ProductManagmentComponent,
-    PromocodeManagmentComponent,
-    RequestManagmentComponent,
+    // BrandManagmentComponent,
+    // ClientManagmentComponent,
+    // FinancialManagmentComponent,
+    // OrderManagmentComponent,
+    // ProductManagmentComponent,
+    // PromocodeManagmentComponent,
+    // RequestManagmentComponent,
     // SettingComponent,
-    TryingComponent
+    // TryingComponent
 
 
   ],

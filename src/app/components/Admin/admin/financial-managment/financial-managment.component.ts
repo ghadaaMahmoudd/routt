@@ -1,9 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 declare var bootstrap: any;
 @Component({
   selector: 'app-financial-managment',
   templateUrl: './financial-managment.component.html',
-  styleUrls: ['./financial-managment.component.css']
+  styleUrls: ['./financial-managment.component.css'],
+     standalone:true,imports:[
+          CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+     ],
 })
 export class FinancialManagmentComponent {
 

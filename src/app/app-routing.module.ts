@@ -131,14 +131,9 @@ const routes: Routes = [
    {path:'brand-managment',component:BrandManagmentComponent},
    {path:'setting',component:SettingComponent},
    {path:'test',component:TryingComponent},
-    ]
-   },
-   {path:'app-header' , component:HeaderComponent},
-   {path:'app-sidebar' , component:SidebarComponent},
-   {path:'app-filter' , component:FilterComponent},
-   {path:'app-dashboard' , component:DashboardComponent},
-   {path:'brand-managment',component:BrandManagmentComponent},
-  //  {path:'setting',component:SettingComponent},
+      {path:'brand-managment',component:BrandManagmentComponent},
+         {path:'brand-managment',component:BrandManagmentComponent},
+  
    {path:'test',component:TryingComponent},
    {path:'product-managment',component:ProductManagmentComponent},
    {path:'client-managment',component:ClientManagmentComponent},
@@ -146,6 +141,22 @@ const routes: Routes = [
    {path:'promocode-managment',component:PromocodeManagmentComponent},
    {path:'financial-managment',component:FinancialManagmentComponent},
    {path:'request-managment',component:RequestManagmentComponent},
+
+    ]
+   },
+   {path:'app-header' , component:HeaderComponent},
+   {path:'app-sidebar' , component:SidebarComponent},
+   {path:'app-filter' , component:FilterComponent},
+   {path:'app-dashboard' , component:DashboardComponent},
+  //  {path:'brand-managment',component:BrandManagmentComponent},
+  //  {path:'setting',component:SettingComponent},
+  //  {path:'test',component:TryingComponent},
+  //  {path:'product-managment',component:ProductManagmentComponent},
+  //  {path:'client-managment',component:ClientManagmentComponent},
+  //  {path:'order-managment',component:OrderManagmentComponent},
+  //  {path:'promocode-managment',component:PromocodeManagmentComponent},
+  //  {path:'financial-managment',component:FinancialManagmentComponent},
+  //  {path:'request-managment',component:RequestManagmentComponent},
 
 ];
 

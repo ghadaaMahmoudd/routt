@@ -1,9 +1,16 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 declare var bootstrap: any;
 @Component({
   selector: 'app-order-managment',
   templateUrl: './order-managment.component.html',
-  styleUrls: ['./order-managment.component.css']
+  styleUrls: ['./order-managment.component.css'],
+     standalone:true,imports:[
+          CommonModule,
+          FormsModule,
+          ReactiveFormsModule,
+     ],
 })
 export class OrderManagmentComponent {
 
