@@ -61,7 +61,7 @@ import { ClientManagmentComponent } from './components/Admin/admin/client-managm
 import { RequestManagmentComponent } from './components/Admin/admin/request-managment/request-managment.component';
 import { FinancialManagmentComponent } from './components/Admin/admin/financial-managment/financial-managment.component';
 import { OrderManagmentComponent } from './components/Admin/admin/order-managment/order-managment.component';
-import { ProductManagmentComponent } from './components/Admin/admin/product-managment/product-managment.component';
+import { ProductManagementComponent } from './components/Admin/admin/product-management/product-management.component';
 import { PromocodeManagmentComponent } from './components/Admin/admin/promocode-managment/promocode-managment.component';
 import { SettingComponent } from './components/Admin/admin/setting/setting.component';
 import { TryingComponent } from './components/Admin/admin/trying/trying.component';
@@ -129,13 +129,13 @@ const routes: Routes = [
 
    {path:'app-dashboard' , component:DashboardComponent},
    {path:'brand-managment',component:BrandManagmentComponent},
-   {path:'setting',component:SettingComponent},
+   
    {path:'test',component:TryingComponent},
       {path:'brand-managment',component:BrandManagmentComponent},
          {path:'brand-managment',component:BrandManagmentComponent},
   
-   {path:'test',component:TryingComponent},
-   {path:'product-managment',component:ProductManagmentComponent},
+  //  {path:'test',component:TryingComponent},
+   {path:'product-managment',component:ProductManagementComponent},
    {path:'client-managment',component:ClientManagmentComponent},
    {path:'order-managment',component:OrderManagmentComponent},
    {path:'promocode-managment',component:PromocodeManagmentComponent},
@@ -143,11 +143,14 @@ const routes: Routes = [
    {path:'request-managment',component:RequestManagmentComponent},
 
     ]
+    
    },
    {path:'app-header' , component:HeaderComponent},
    {path:'app-sidebar' , component:SidebarComponent},
    {path:'app-filter' , component:FilterComponent},
    {path:'app-dashboard' , component:DashboardComponent},
+   {path:'setting',component:SettingComponent},
+   
   //  {path:'brand-managment',component:BrandManagmentComponent},
   //  {path:'setting',component:SettingComponent},
   //  {path:'test',component:TryingComponent},

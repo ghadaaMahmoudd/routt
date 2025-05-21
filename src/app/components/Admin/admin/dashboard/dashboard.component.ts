@@ -37,10 +37,10 @@
 //       x: {
 //         grid: {
 //           display: false,
-        
+
 //         },
 //         ticks: {
-        
+
 //         },
 //       },
 //       y: {
@@ -57,7 +57,7 @@
 
 //   };
 
-  
+
 
 //   public barChartData: any =
 //     {
@@ -68,7 +68,7 @@
 //           data: [65, 59, 80, 81, 56, 55, 40, 90, 30, 55, 20, 100], label: 'Series A',
 //           backgroundColor: '#F5CDAD',
 //           borderRadius: 10,
-//           barPercentage: 0.4, 
+//           barPercentage: 0.4,
 //           categoryPercentage: 0.7
 //         },
 //       ],
@@ -95,11 +95,20 @@
 
 import { Component } from '@angular/core';
 import { ChartOptions, ChartType, ChartData } from 'chart.js';
+// import { CommonModule } from '@angular/common';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+
+    // standalone:true,imports:[
+    //       CommonModule,
+    //       FormsModule,
+    //       ReactiveFormsModule,
+    //  ],
 })
 export class DashboardComponent {
   cards = [

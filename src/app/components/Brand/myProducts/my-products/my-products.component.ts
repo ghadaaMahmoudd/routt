@@ -1,5 +1,5 @@
 import { Component  ,OnInit} from '@angular/core';
-import { ProductService } from 'src/app/services/product.service'; 
+import { ProductService } from 'src/app/services/product.service';
 
 interface Product {
   id: number;
@@ -18,25 +18,25 @@ interface Product {
   styleUrls: ['./my-products.component.css']
 })
 export class MyProductsComponent implements OnInit{
-  
+
     searchText: string = '';
     selectedProduct: Product | null = null;
     products: Product[] = [];
     isLoading = false;
     errorMessage = '';
-  
+
     constructor(private productService: ProductService) {}
-  
+
     ngOnInit() {
-      const brandId = 123; 
+      const brandId = 123;
       this.fetchProducts(brandId);
     }
-    
+
     fetchProducts(brandId: number) {
       this.isLoading = true;
       this.productService.getProductsByBrand(brandId).subscribe({
         next: (data) => {
-          this.products = data;
+          // this.products = data;
           this.isLoading = false;
         },
         error: (err) => {
@@ -45,18 +45,18 @@ export class MyProductsComponent implements OnInit{
         }
       });
     }
-    
-  
+
+
     filteredProducts() {
       return this.products.filter(p =>
         p.name.toLowerCase().includes(this.searchText.toLowerCase())
       );
     }
-  
+
     showProductDetails(product: Product) {
       this.selectedProduct = product;
     }
-  
+
     closeModal() {
       this.selectedProduct = null;
     }

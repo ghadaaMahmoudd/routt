@@ -87,7 +87,7 @@ import { TopBrandComponent } from './components/Admin/admin/top-brand/top-brand.
 // import { OrderManagmentComponent } from './components/Admin/admin/order-managment/order-managment.component';
 // import { ProductManagmentComponent } from './components/Admin/admin/product-managment/product-managment.component';
 // import { PromocodeManagmentComponent } from './components/Admin/admin/promocode-managment/promocode-managment.component';
-// import { SettingComponent } from './components/Admin/admin/setting/setting.component';
+import { SettingComponent } from './components/Admin/admin/setting/setting.component';
 // import { TryingComponent } from './components/Admin/admin/trying/trying.component';
 
 
@@ -163,7 +163,7 @@ import { TopBrandComponent } from './components/Admin/admin/top-brand/top-brand.
     // ProductManagmentComponent,
     // PromocodeManagmentComponent,
     // RequestManagmentComponent,
-    // SettingComponent,
+    SettingComponent,
     // TryingComponent
 
 

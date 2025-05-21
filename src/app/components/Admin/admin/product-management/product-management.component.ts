@@ -3,42 +3,34 @@
 // import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // declare var bootstrap: any;
 // @Component({
-//   selector: 'app-order-managment',
-//   templateUrl: './order-managment.component.html',
-//   styleUrls: ['./order-managment.component.css'],
+//   selector: 'app-product-managment',
+//   templateUrl: './product-managment.component.html',
+//   styleUrls: ['./product-managment.component.css'],
 //      standalone:true,imports:[
 //           CommonModule,
 //           FormsModule,
 //           ReactiveFormsModule,
 //      ],
 // })
-// export class OrderManagmentComponent {
-
+// export class ProductManagmentComponent {
 //   brands: Array<{
-//     orderid: number;
-//   date: any;
-//     customer: string;
-//     payment: any;
-//     total: any;
-//     delivery: string;
-//     items: any;
-// products:any;
-
-
-
+//     ProductName: string;
+// logo:any;
+//     category: string;
+//     Brand: string;
+//     price: number;
+//     quantity: number;
+//     rank: number;
+//     date: any;
 //   }> = [];
 
+//   isFilterVisible: boolean = false;
 
-
-//   selectedOrderProducts: { name: string; price: number; image: string }[] = [];
-
-
-//   viewOrderDetails(brands: any) {
-//     this.selectedOrderProducts = brands.products;
+//   toggleFilter() {
+//     this.isFilterVisible = !this.isFilterVisible;
 //   }
 
 //   selectedBrand: any = null;
-// payment: any;
 
 //   onDeleteClick(brand: any): void {
 //     this.selectedBrand = brand;
@@ -75,6 +67,12 @@
 //     const modal = new bootstrap.Modal(modalElement!);
 //     modal.show();
 //   }
+//   // openEditModal() {
+//   //   const modalElement = document.getElementById('editProductModal');
+//   //   if (modalElement) {
+//   //     const modalInstance = new bootstrap.Modal(modalElement);
+//   //     modalInstance.show();
+//   //   }}
 
 //   saveChanges(): void {
 //     console.log('Saving changes for:', this.selectedBrand);
@@ -82,6 +80,24 @@
 //     const modal = bootstrap.Modal.getInstance(modalElement!);
 //     modal.hide();
 //   }
+
+//   product = {
+//     name: 'headphones',
+//     price: 250,
+//     category: 'electrons',
+//     quantity: 250,
+//     isActive: true,
+//     description: 'Stylish and durable coffee mug, perfect for daily use or gifting!',
+//     color: 'brown',
+//   };
+
+
+
+//   selectColor(color: string) {
+//     this.product.color = color;
+//     console.log('Selected color:', color);
+//   }
+
 
 //   blockAccount(): void {
 //     console.log('Blocking account for:', this.selectedBrand);
@@ -105,107 +121,100 @@
 //   }
 
 //   ngOnInit(): void {
-    
+//     // تحميل بيانات مبدئية
 //     this.brands = [
 //       {
-//         orderid:1 ,
-//        date: '4/1/1996',
-//         customer: 'basma',
+//         logo:"assets/Rectangle 70.png",
+//         ProductName: 'headphone',
 
-//         payment: 'success',
-//         total: '77L.E',
-//         delivery: 'era',
-//         items: '5 items',
-//         products: [
-//           { name: 'wristwatch', price: 200, image: 'assets/wristwatch.jpg' },
-//           { name: 't-shirts', price: 200, image: 'assets/t-shirts.jpg' }
-//         ]
-
-
-
-
+//             category: 'electronics',
+//             Brand: "basma",
+//             price: 13,
+//             quantity: 10,
+//             rank: 3.3,
+//             date: "12/1/2020",
 //       },
-//       {
-//         orderid:1 ,
-//        date: '4/1/1996',
-//         customer: 'basma',
+//     {
+//         logo:"assets/Rectangle 70.png",
+//         ProductName: 'headphone',
 
-//         payment: 'pending',
-//         total: '77L.E',
-//         delivery: 'era',
-//         items: '5 items',
-//         products: [
-//           { name: 'wristwatch', price: 200, image: 'assets/wristwatch.jpg' },
-//           { name: 't-shirts', price: 200, image: 'assets/t-shirts.jpg' }
-//         ]
-
+//             category: 'electronics',
+//             Brand: "basma",
+//             price: 13,
+//             quantity: 10,
+//             rank: 3.3,
+//             date: "12/1/2020",
 //       },
 //     ];
 //   }
 // }
 
 
-
-
-
+//الاساسي
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { OrdersService } from 'src/app/services/orders.service';
+import { ProductService } from 'src/app/services/product.service';
+
+import { HttpClientModule } from '@angular/common/http';
 
 declare var bootstrap: any;
 
 @Component({
-  selector: 'app-order-managment',
-  templateUrl: './order-managment.component.html',
-  styleUrls: ['./order-managment.component.css'],
+  selector: 'app-product-managment',
+  templateUrl: './product-management.component.html',
+  styleUrls: ['./product-management.component.css'],
   standalone: true,
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
 })
-export class OrderManagmentComponent implements OnInit {
-  orders: Array<any> = [];
-  selectedOrderProducts: { name: string; price: number; image: string }[] = [];
-  selectedOrder: any = null;
+export class ProductManagementComponent implements OnInit {
+  products: any = [];
   isFilterVisible: boolean = false;
+  selectedProduct: any = null;
 
-  constructor(private OrdersService: OrdersService) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.loadOrders();
+    this.loadProducts();
   }
 
-  loadOrders(): void {
-    this.OrdersService.getOrders().subscribe({
-      next: (data: any[]) => {
-        this.orders = data;
+  loadProducts(): void {
+    this.productService.getProducts().subscribe({
+      next: (data) => {
+        // this.products = data?.values;
+        this.products = (data as { [key: string]: any })["$values"];
+        console.log(data);
       },
-      error: (err: any) => {
-        console.error('Error loading orders:', err);
+      error: (err) => {
+        console.error('Error loading products:', err);
       }
     });
   }
 
-  viewOrderDetails(order: any) {
-    this.selectedOrderProducts = order.products ?? [];
+  toggleFilter() {
+    this.isFilterVisible = !this.isFilterVisible;
   }
 
-  onDeleteClick(order: any): void {
-    this.selectedOrder = order;
+  onDeleteClick(product: any): void {
+    this.selectedProduct = product;
     const modalElement = document.getElementById('deleteModal');
     const modal = new bootstrap.Modal(modalElement!);
     modal.show();
   }
 
   confirmDelete(): void {
-    this.orders = this.orders.filter((order: any) => order !== this.selectedOrder);
-    this.selectedOrder = null;
+    this.products = this.products.filter((product: any) => product !== this.selectedProduct);
+    this.selectedProduct = null;
+
     const deleteModalElement = document.getElementById('deleteModal');
     const deleteModal = bootstrap.Modal.getInstance(deleteModalElement!);
     deleteModal.hide();
+
     this.openSuccessModal();
   }
 
@@ -213,12 +222,34 @@ export class OrderManagmentComponent implements OnInit {
     const successModalElement = document.getElementById('successModal');
     const successModal = new bootstrap.Modal(successModalElement!);
     successModal.show();
+
     setTimeout(() => {
       successModal.hide();
     }, 3000);
   }
 
-  toggleFilter() {
-    this.isFilterVisible = !this.isFilterVisible;
+  openEditModal(product: any): void {
+    this.selectedProduct = { ...product };
+    const modalElement = document.getElementById('editModal');
+    const modal = new bootstrap.Modal(modalElement!);
+    modal.show();
+  }
+
+  saveChanges(): void {
+    // هنا يمكنك إرسال التعديلات للـ API لو أردت
+    const modalElement = document.getElementById('editModal');
+    const modal = bootstrap.Modal.getInstance(modalElement!);
+    modal.hide();
+  }
+
+  blockAccount(): void {
+    // هنا يمكنك إرسال بلوك للـ API لو أردت
+    const modalElement = document.getElementById('editModal');
+    const modal = bootstrap.Modal.getInstance(modalElement!);
+    modal.hide();
   }
 }
+
+
+
+
